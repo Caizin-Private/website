@@ -222,6 +222,9 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 .flinks a:hover{color:#fff;}
 .fcopy{font-size:11px;color:rgba(255,255,255,.18);}
 
+.footer-social{display:flex;gap:12px;align-items:center;}
+.fsoc{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:rgba(255,255,255,.35);border:.5px solid rgba(255,255,255,.1);transition:all .2s;text-decoration:none;}
+.fsoc:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);}
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .diff-grid{grid-template-columns:repeat(2,1fr);}
@@ -513,10 +516,20 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
         <div class="addr-gst">GST: 27AABCZ6814D1ZC</div>
       </div>
       <div class="addr-social">
-        <div class="addr-social-label">Connect with us</div>
+        <div class="addr-social-label">Follow Caizin</div>
         <div class="addr-social-links">
-          <a href="https://www.linkedin.com/company/caizin" target="_blank" rel="noopener" class="addr-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
-          <a href="https://caizin.com" target="_blank" rel="noopener" class="addr-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>caizin.com</a>
+          <a href="https://www.linkedin.com/company/caizin/" target="_blank" rel="noopener" class="addr-social-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://www.youtube.com/@caizincommune" target="_blank" rel="noopener" class="addr-social-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="white"/></svg>
+            YouTube
+          </a>
+          <a href="https://www.instagram.com/caizin_raisethebar/" target="_blank" rel="noopener" class="addr-social-btn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            Instagram
+          </a>
         </div>
       </div>
     </div>
@@ -531,6 +544,17 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
     <a href="#our-work">Our Work</a>
     <a href="#team">Our Team</a>
     <a href="#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/caizin/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@caizincommune" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#060d20"/></svg>
+    </a>
+    <a href="https://www.instagram.com/caizin_raisethebar/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
   </div>
   <div class="fcopy">© 2026 Caizin. All rights reserved.</div>
 </footer>
