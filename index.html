@@ -4,11 +4,8 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Caizin — Raise the Bar</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png"/>
-<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png"/>
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png"/>
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230D1E4C'/><text y='.9em' font-size='72' font-family='Segoe UI,Arial,sans-serif' font-weight='800' fill='white' x='50' text-anchor='middle' dominant-baseline='top' dy='8'>C</text></svg>"/>
+<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <style>
 :root{
   --navy:#0D1E4C;--navy2:#162660;--red:#C41230;--redh:#e8142f;
@@ -20,13 +17,8 @@
 html{scroll-behavior:smooth;}
 body{font-family:var(--f);color:var(--navy);background:var(--w);overflow-x:hidden;}
 
-/* NAV */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;height:62px;
-  background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);
-  border-bottom:0.5px solid var(--g100);
-  display:flex;align-items:center;justify-content:space-between;padding:0 5%;
-}
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:.5px solid var(--g100);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
 .logo{text-decoration:none;}
 .logo-n{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1;}
 .logo-n span{color:var(--red);}
@@ -36,82 +28,42 @@ nav{
 .nav-links a:hover{color:var(--navy);}
 .nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--red);padding:9px 20px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s;}
 .nav-cta:hover{background:var(--redh);}
-/* hamburger */
 .hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
 .hbg span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
 .hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
 .hbg.open span:nth-child(2){opacity:0;}
 .hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
-.mob-nav{
-  display:none;position:fixed;top:62px;left:0;right:0;z-index:199;
-  background:#fff;border-bottom:0.5px solid var(--g100);
-  padding:12px 5% 18px;flex-direction:column;gap:0;
-}
+.mob-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:#fff;border-bottom:.5px solid var(--g100);padding:12px 5% 18px;flex-direction:column;}
 .mob-nav.open{display:flex;}
-.mob-nav a{
-  font-size:15px;color:var(--g600);text-decoration:none;
-  padding:13px 0;border-bottom:0.5px solid var(--g100);transition:color .2s;
-}
-.mob-nav a.mob-cta{
-  margin-top:10px;background:var(--red);color:#fff;
-  padding:13px 16px;border-radius:3px;text-align:center;
-  font-weight:600;border-bottom:none;
-}
+.mob-nav a{font-size:15px;color:var(--g600);text-decoration:none;padding:13px 0;border-bottom:.5px solid var(--g100);transition:color .2s;}
+.mob-nav a.mob-cta{margin-top:10px;background:var(--red);color:#fff;padding:13px 16px;border-radius:3px;text-align:center;font-weight:600;border-bottom:none;}
 
-/* RED RULE */
+/* ── RED RULE ── */
 .rr{height:3px;background:var(--red);margin-top:62px;}
 
-/* HERO */
+/* ── HERO ── */
 .hero{display:grid;grid-template-columns:1.1fr .9fr;min-height:91vh;}
-.hero-l{
-  padding:7% 6% 6% 8%;display:flex;flex-direction:column;
-  justify-content:center;border-right:0.5px solid var(--g100);
-}
-.eyebrow{
-  display:flex;align-items:center;gap:10px;margin-bottom:26px;
-  font-size:11px;font-weight:700;color:var(--red);
-  text-transform:uppercase;letter-spacing:.13em;
-}
-.eyebrow::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
+.hero-l{padding:7% 6% 6% 8%;display:flex;flex-direction:column;justify-content:center;border-right:.5px solid var(--g100);}
+.ey{display:flex;align-items:center;gap:10px;margin-bottom:26px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;}
+.ey::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
 h1{font-size:clamp(30px,3.8vw,54px);font-weight:800;color:var(--navy);line-height:1.06;letter-spacing:-.025em;margin-bottom:22px;}
 h1 em{color:var(--red);font-style:normal;}
 .hero-sub{font-size:clamp(14px,1.35vw,16.5px);color:var(--g600);line-height:1.75;max-width:500px;margin-bottom:36px;}
 .btn-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
-.btn-p{
-  display:inline-flex;align-items:center;gap:7px;
-  background:var(--red);color:#fff;font-size:14px;font-weight:600;
-  padding:13px 26px;border-radius:3px;text-decoration:none;
-  letter-spacing:.02em;transition:background .2s,transform .15s;
-}
+.btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
 .btn-p:hover{background:var(--redh);transform:translateY(-1px);}
-.btn-g{
-  font-size:13px;color:var(--g600);text-decoration:none;
-  border-bottom:1px solid var(--g200);padding-bottom:2px;
-  transition:color .2s,border-color .2s;
-}
+.btn-g{font-size:13px;color:var(--g600);text-decoration:none;border-bottom:1px solid var(--g200);padding-bottom:2px;transition:color .2s,border-color .2s;}
 .btn-g:hover{color:var(--navy);border-color:var(--navy);}
-.stats{
-  display:flex;margin-top:48px;padding-top:32px;
-  border-top:0.5px solid var(--g100);gap:0;
-}
-.stat{flex:1;padding-right:20px;border-right:0.5px solid var(--g100);}
+.stats{display:flex;margin-top:48px;padding-top:32px;border-top:.5px solid var(--g100);}
+.stat{flex:1;padding-right:20px;border-right:.5px solid var(--g100);}
 .stat:last-child{border-right:none;padding-right:0;}
 .stat:not(:first-child){padding-left:20px;}
 .stat-n{font-size:24px;font-weight:800;color:var(--navy);line-height:1;}
 .stat-l{font-size:10px;color:var(--g400);margin-top:4px;text-transform:uppercase;letter-spacing:.07em;line-height:1.4;}
-
-/* HERO RIGHT */
 .hero-r{position:relative;overflow:hidden;background:var(--off);display:flex;flex-direction:column;}
 .hero-pw{flex:1;position:relative;overflow:hidden;display:flex;align-items:flex-end;}
-.hero-img{
-  width:100%;height:100%;object-fit:cover;object-position:center 15%;
-  filter:grayscale(100%);display:block;
-}
-.hero-ov{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(to top,rgba(13,30,76,.93) 0%,rgba(13,30,76,.38) 55%,transparent 100%);
-  padding:28px 28px 24px;
-}
+.hero-img{width:100%;height:100%;object-fit:cover;object-position:center 15%;filter:grayscale(100%);display:block;}
+.hero-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,30,76,.93) 0%,rgba(13,30,76,.38) 55%,transparent 100%);padding:28px 28px 24px;}
 .hero-name{font-size:19px;font-weight:800;color:#fff;margin-bottom:3px;}
 .hero-role{font-size:11px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-bottom:12px;}
 .hero-quote{font-size:13px;color:rgba(255,255,255,.82);line-height:1.6;font-style:italic;border-left:2px solid var(--red);padding-left:13px;}
@@ -119,39 +71,28 @@ h1 em{color:var(--red);font-style:normal;}
 .hero-tag-t{font-size:11px;font-weight:600;color:rgba(255,255,255,.45);letter-spacing:.05em;text-transform:uppercase;}
 .hero-badge{font-size:11px;font-weight:700;color:var(--red);background:rgba(196,18,48,.15);border:1px solid rgba(196,18,48,.3);padding:3px 11px;border-radius:100px;white-space:nowrap;}
 
-/* SECTIONS */
+/* ── SECTIONS ── */
 section{padding:80px 8%;}
-.ey{display:flex;align-items:center;gap:10px;margin-bottom:14px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;}
-.ey::before{content:'';width:20px;height:2px;background:var(--red);flex-shrink:0;}
 h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
 .sub{font-size:clamp(14px,1.3vw,16px);color:var(--g600);line-height:1.75;max-width:600px;}
 
-/* PROBLEM */
+/* ── PROBLEM ── */
 .problem{background:var(--navy);position:relative;overflow:hidden;}
 .problem h2{color:#fff;}
 .problem .sub{color:rgba(255,255,255,.5);}
 .problem .ey{color:var(--red);}
 .problem .ey::before{background:var(--red);}
 .prob-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:44px;}
-.pc{
-  background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.08);
-  border-left:2px solid var(--red);border-radius:4px;padding:22px 20px;
-  transition:background .2s;
-}
+.pc{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.08);border-left:2px solid var(--red);border-radius:4px;padding:22px 20px;transition:background .2s;}
 .pc:hover{background:rgba(255,255,255,.07);}
 .pc-n{font-size:10px;font-weight:700;color:var(--red);letter-spacing:.1em;margin-bottom:10px;}
 .pc-t{font-size:14.5px;font-weight:600;color:#fff;line-height:1.5;margin-bottom:5px;}
 .pc-s{font-size:13px;color:rgba(255,255,255,.42);line-height:1.55;}
 
-/* DIFF */
+/* ── DIFF ── */
 .diff{background:var(--off);}
 .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px;}
-.dc{
-  background:var(--w);border-radius:4px;padding:28px 24px;
-  border-top:2px solid transparent;
-  box-shadow:0 1px 3px rgba(13,30,76,.06);
-  transition:border-color .2s,box-shadow .2s;
-}
+.dc{background:var(--w);border-radius:4px;padding:28px 24px;border-top:2px solid transparent;box-shadow:0 1px 3px rgba(13,30,76,.06);transition:border-color .2s,box-shadow .2s;}
 .dc:hover{border-color:var(--red);box-shadow:0 6px 24px rgba(13,30,76,.1);}
 .dc-ico{width:38px;height:38px;border-radius:50%;background:rgba(196,18,48,.08);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .dc-ico svg{width:17px;height:17px;stroke:var(--red);fill:none;stroke-width:2;}
@@ -159,24 +100,15 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 .dc-b{font-size:13px;color:var(--g600);line-height:1.65;}
 .dc-tag{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.07em;}
 
-/* FRAMEWORK */
+/* ── FRAMEWORK ── */
 .framework{background:var(--w);}
 .fw-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:8%;align-items:start;}
 .fw-steps{display:flex;flex-direction:column;margin-top:32px;}
-.fs{
-  display:flex;gap:16px;padding:16px 0;
-  border-bottom:0.5px solid var(--g100);cursor:pointer;
-  position:relative;transition:padding-left .2s;
-}
+.fs{display:flex;gap:16px;padding:16px 0;border-bottom:.5px solid var(--g100);cursor:pointer;position:relative;transition:padding-left .2s;}
 .fs:last-child{border-bottom:none;}
 .fs.on{padding-left:10px;}
 .fs.on::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:2px;background:var(--red);border-radius:1px;}
-.fs-num{
-  width:28px;height:28px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:700;
-  background:var(--g100);color:var(--g400);transition:all .2s;
-}
+.fs-num{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--g100);color:var(--g400);transition:all .2s;}
 .fs.on .fs-num{background:var(--red);color:#fff;}
 .fs-t{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:3px;}
 .fs-d{font-size:13px;color:var(--g600);line-height:1.6;display:none;}
@@ -184,89 +116,53 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 .fw-vis{background:var(--navy);border-radius:6px;padding:36px 32px;position:sticky;top:80px;}
 .fv-t{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px;}
 .fv-stages{display:flex;flex-direction:column;gap:9px;}
-.fvs{
-  display:flex;gap:11px;padding:13px 14px;border-radius:4px;
-  background:rgba(255,255,255,.04);border:0.5px solid rgba(255,255,255,.07);
-  transition:all .2s;
-}
+.fvs{display:flex;gap:11px;padding:13px 14px;border-radius:4px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);transition:all .2s;}
 .fvs.on{background:rgba(196,18,48,.12);border-color:rgba(196,18,48,.3);}
-.fvs-n{
-  width:24px;height:24px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;font-weight:700;
-  background:rgba(255,255,255,.07);color:rgba(255,255,255,.38);
-  transition:all .2s;
-}
+.fvs-n{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:rgba(255,255,255,.07);color:rgba(255,255,255,.38);transition:all .2s;}
 .fvs.on .fvs-n{background:var(--red);color:#fff;}
 .fvs-name{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.42);transition:all .2s;}
 .fvs.on .fvs-name{color:#fff;}
 .fvs-d{font-size:11px;color:rgba(255,255,255,.28);line-height:1.5;margin-top:2px;transition:all .2s;}
 .fvs.on .fvs-d{color:rgba(255,255,255,.52);}
-.fw-ai{margin-top:18px;padding:14px;border-radius:4px;background:rgba(196,18,48,.08);border:0.5px solid rgba(196,18,48,.2);}
+.fw-ai{margin-top:18px;padding:14px;border-radius:4px;background:rgba(196,18,48,.08);border:.5px solid rgba(196,18,48,.2);}
 .fw-ai-l{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
 .fw-ai-t{font-size:11.5px;color:rgba(255,255,255,.48);line-height:1.55;}
 
-/* IMPACT */
+/* ── IMPACT ── */
 .impact{background:var(--off);}
 .imp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px;}
-.ic{
-  background:var(--w);border-radius:4px;padding:26px 22px;
-  box-shadow:0 1px 3px rgba(13,30,76,.06);
-  border-bottom:2px solid var(--g100);transition:border-color .2s;
-}
+.ic{background:var(--w);border-radius:4px;padding:26px 22px;box-shadow:0 1px 3px rgba(13,30,76,.06);border-bottom:2px solid var(--g100);transition:border-color .2s;}
 .ic:hover{border-color:var(--red);}
 .ic-sec{font-size:10px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
 .ic-sec::before{content:'';width:9px;height:2px;background:var(--red);}
 .ic-m{font-size:clamp(26px,2.6vw,36px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:7px;}
 .ic-d{font-size:13px;color:var(--g600);line-height:1.65;margin-bottom:12px;}
-.ic-c{font-size:11.5px;color:var(--g400);font-style:italic;padding-top:11px;border-top:0.5px solid var(--g100);}
+.ic-c{font-size:11.5px;color:var(--g400);font-style:italic;padding-top:11px;border-top:.5px solid var(--g100);}
 
-/* PULL QUOTE */
+/* ── PULL QUOTE ── */
 .pq{background:var(--navy);padding:72px 8%;text-align:center;position:relative;overflow:hidden;}
-.pq-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.05;pointer-events:none;}
 .pq-m{font-size:64px;color:var(--red);font-family:Georgia,serif;line-height:.6;display:block;margin-bottom:20px;}
 .pq-t{font-size:clamp(20px,2.8vw,36px);font-weight:800;color:#fff;line-height:1.2;max-width:740px;margin:0 auto 18px;letter-spacing:-.01em;}
 .pq-a{font-size:12.5px;color:rgba(255,255,255,.33);}
 
-/* TEAM */
+/* ── TEAM ── */
 .team{background:var(--w);}
 .team-intro{display:grid;grid-template-columns:1fr 1fr;gap:8%;align-items:start;margin-bottom:48px;}
 .team-intro-r{padding-top:4px;font-size:15px;color:var(--g600);line-height:1.8;}
-
-/* Leadership grid — equal cards for all 14 */
 .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
-.tc{
-  border-radius:6px;overflow:hidden;
-  border:0.5px solid var(--g100);
-  transition:transform .2s,box-shadow .2s;
-  background:var(--w);
-}
+.tc{border-radius:6px;overflow:hidden;border:.5px solid var(--g100);transition:transform .2s,box-shadow .2s;background:var(--w);}
 .tc:hover{transform:translateY(-4px);box-shadow:0 8px 28px rgba(13,30,76,.11);}
-.tc-top{
-  height:6px;background:var(--navy);
-  transition:background .2s;
-}
+.tc-top{height:4px;background:var(--navy);transition:background .2s;}
 .tc:hover .tc-top{background:var(--red);}
 .tc-body{padding:20px 18px 22px;}
-.tc-initials{
-  width:52px;height:52px;border-radius:50%;
-  background:var(--off2);border:2px solid var(--g100);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;font-weight:800;color:var(--navy);
-  margin-bottom:14px;letter-spacing:-.02em;
-}
+.tc-ini{width:52px;height:52px;border-radius:50%;background:var(--off2);border:2px solid var(--g100);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--navy);margin-bottom:14px;letter-spacing:-.02em;}
 .tc-name{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:2px;line-height:1.3;}
 .tc-role{font-size:11px;color:var(--red);font-weight:700;text-transform:uppercase;letter-spacing:.07em;margin-bottom:14px;}
-.tc-li{
-  display:inline-flex;align-items:center;gap:6px;
-  font-size:12px;color:var(--g400);text-decoration:none;
-  border:0.5px solid var(--g200);border-radius:100px;
-  padding:5px 12px;transition:all .2s;
-}
+.tc-li{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--g400);text-decoration:none;border:.5px solid var(--g200);border-radius:100px;padding:5px 12px;transition:all .2s;}
 .tc-li:hover{color:var(--navy);border-color:var(--navy);background:var(--off);}
 .tc-li svg{width:13px;height:13px;fill:currentColor;flex-shrink:0;}
 
-/* NOT FOR */
+/* ── NOT FOR ── */
 .notfor{background:var(--off);}
 .nf-wrap{display:grid;grid-template-columns:1fr 1fr;gap:8%;}
 .nf-list,.yes-list{list-style:none;display:flex;flex-direction:column;gap:13px;margin-top:26px;}
@@ -278,41 +174,46 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 .yc{background:rgba(13,30,76,.08);}
 .yc svg{stroke:var(--navy);}
 
-/* INSIGHTS — hidden */
+/* ── INSIGHTS hidden ── */
 .insights{display:none;}
 
-/* CTA */
-.cta{background:var(--navy);padding:88px 8%;text-align:center;position:relative;overflow:hidden;}
-.cta-bg{position:absolute;inset:0;width:100%;height:100%;opacity:.06;pointer-events:none;}
-.cta-ey{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;margin-bottom:16px;}
-.cta h2{color:#fff;margin-left:auto;margin-right:auto;max-width:660px;}
-.cta-sub{font-size:15.5px;color:rgba(255,255,255,.48);line-height:1.75;max-width:490px;margin:14px auto 32px;}
-.cta-sub em{color:rgba(255,255,255,.82);font-style:normal;font-weight:500;}
-.cta-form{display:flex;flex-direction:column;gap:10px;max-width:450px;margin:0 auto;}
-.cta-row2{display:flex;gap:10px;}
-.ci{
-  flex:1;padding:12px 15px;font-size:13.5px;
-  background:rgba(255,255,255,.07);border:0.5px solid rgba(255,255,255,.14);
-  border-radius:3px;color:#fff;font-family:var(--f);
-  outline:none;transition:border-color .2s;
-}
+/* ── CONTACT ── */
+.contact-section{background:var(--navy);position:relative;overflow:hidden;}
+.contact-section::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 600'%3E%3Cg fill='none' stroke='%23fff' stroke-width='1' opacity='0.06'%3E%3Cpath d='M0,200 Q360,150 720,190 Q1080,230 1440,190'/%3E%3Cpath d='M0,260 Q360,210 720,250 Q1080,290 1440,250'/%3E%3Cpath d='M900,0 Q1100,80 1440,60'/%3E%3Cpath d='M940,0 Q1140,90 1440,80'/%3E%3C/g%3E%3C/svg%3E") center/cover no-repeat;pointer-events:none;}
+.cs-inner{display:grid;grid-template-columns:1.1fr .9fr;gap:8%;padding:80px 8%;position:relative;z-index:1;}
+.cs-ey{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;margin-bottom:16px;display:flex;align-items:center;gap:10px;}
+.cs-ey::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
+.cs-h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:#fff;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;max-width:520px;}
+.cs-sub{font-size:15px;color:rgba(255,255,255,.48);line-height:1.75;max-width:460px;margin-bottom:32px;}
+.cs-sub em{color:rgba(255,255,255,.82);font-style:normal;font-weight:500;}
+.cs-form{display:flex;flex-direction:column;gap:10px;max-width:440px;}
+.cs-row{display:flex;gap:10px;}
+.ci{flex:1;padding:12px 15px;font-size:13.5px;background:rgba(255,255,255,.07);border:.5px solid rgba(255,255,255,.14);border-radius:3px;color:#fff;font-family:var(--f);outline:none;transition:border-color .2s;}
 .ci::placeholder{color:rgba(255,255,255,.28);}
 .ci:focus{border-color:rgba(255,255,255,.38);}
-.cta-btn{
-  align-self:center;display:inline-flex;align-items:center;gap:7px;margin-top:4px;
-  background:var(--red);color:#fff;font-size:14px;font-weight:600;
-  padding:13px 30px;border-radius:3px;text-decoration:none;
-  letter-spacing:.02em;transition:background .2s,transform .15s;
-}
-.cta-btn:hover{background:var(--redh);transform:translateY(-1px);}
-.cta-note{font-size:11px;color:rgba(255,255,255,.22);margin-top:13px;}
+.cs-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin-top:4px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 28px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
+.cs-btn:hover{background:var(--redh);transform:translateY(-1px);}
+.cs-note{font-size:11px;color:rgba(255,255,255,.22);margin-top:12px;}
+/* address cards */
+.cs-right{display:flex;flex-direction:column;gap:16px;padding-top:8px;}
+.addr-card{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.1);border-radius:6px;padding:22px 20px;transition:background .2s;}
+.addr-card:hover{background:rgba(255,255,255,.09);}
+.addr-flag{font-size:20px;margin-bottom:8px;line-height:1;}
+.addr-country{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.addr-city{font-size:15px;font-weight:700;color:#fff;margin-bottom:8px;}
+.addr-detail{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;margin-bottom:12px;}
+.addr-link{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.6);text-decoration:none;transition:color .2s;}
+.addr-link:hover{color:#fff;}
+.addr-link svg{flex-shrink:0;opacity:.7;}
+.addr-gst{font-size:11px;color:rgba(255,255,255,.28);margin-top:8px;font-family:monospace;letter-spacing:.04em;}
+.addr-social{display:flex;flex-direction:column;gap:10px;}
+.addr-social-label{font-size:10px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;}
+.addr-social-links{display:flex;gap:10px;}
+.addr-social-btn{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;color:rgba(255,255,255,.55);text-decoration:none;border:.5px solid rgba(255,255,255,.15);padding:7px 14px;border-radius:100px;transition:all .2s;}
+.addr-social-btn:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.06);}
 
-/* FOOTER */
-footer{
-  background:#060d20;padding:40px 8%;
-  display:flex;align-items:center;justify-content:space-between;
-  border-top:0.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;
-}
+/* ── FOOTER ── */
+footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
 .fl{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.03em;}
 .fl span{color:var(--red);}
 .ft{font-size:8.5px;color:rgba(255,255,255,.2);margin-top:3px;letter-spacing:.1em;text-transform:uppercase;}
@@ -321,7 +222,7 @@ footer{
 .flinks a:hover{color:#fff;}
 .fcopy{font-size:11px;color:rgba(255,255,255,.18);}
 
-/* ═══ RESPONSIVE ═══ */
+/* ── RESPONSIVE ── */
 @media(max-width:1100px){
   .diff-grid{grid-template-columns:repeat(2,1fr);}
   .team-grid{grid-template-columns:repeat(3,1fr);}
@@ -340,65 +241,54 @@ footer{
   .team-intro{grid-template-columns:1fr;}
   .team-grid{grid-template-columns:repeat(2,1fr);}
   .nf-wrap{grid-template-columns:1fr;}
+  .cs-inner{grid-template-columns:1fr;padding:60px 6%;}
 }
 @media(max-width:600px){
   section{padding:60px 5%;}
   .hero-l{padding:6% 5% 5% 5%;}
   .stats{flex-wrap:wrap;gap:20px;}
-  .stat{flex:1 0 40%;border-right:none !important;padding:0 !important;}
+  .stat{flex:1 0 40%;border-right:none!important;padding:0!important;}
   .diff-grid,.imp-grid{grid-template-columns:1fr;}
   .team-grid{grid-template-columns:repeat(2,1fr);}
-  .cta-row2{flex-direction:column;}
+  .cs-row{flex-direction:column;}
   .flinks{display:none;}
-  .prob-grid{grid-template-columns:1fr;}
   .hero-r{height:320px;}
-  .hero-name{font-size:16px;}
-  .hero-quote{font-size:12px;}
-  .pq-t{font-size:clamp(18px,5vw,28px);}
-  h2{font-size:clamp(22px,5vw,32px);}
-  h1{font-size:clamp(26px,7vw,40px);}
   .hero-tag{flex-direction:column;align-items:flex-start;gap:8px;}
+  .cs-inner{padding:50px 5%;}
 }
-@media(max-width:400px){
-  .team-grid{grid-template-columns:1fr;}
-}
+@media(max-width:400px){.team-grid{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo">
-    <div class="logo-n">caizin<span>.</span></div>
-    <div class="logo-t">raise the bar</div>
-  </a>
+  <a href="#" class="logo"><div class="logo-n">caizin<span>.</span></div><div class="logo-t">raise the bar</div></a>
   <ul class="nav-links">
     <li><a href="#how-we-work">How We Work</a></li>
     <li><a href="#our-work">Our Work</a></li>
     <li><a href="#team">Our Team</a></li>
-    <li><a href="#conversation">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
-  <a href="#conversation" class="nav-cta">Start a Conversation</a>
-  <button class="hbg" id="hbg" onclick="toggleMenu()" aria-label="Menu">
-    <span></span><span></span><span></span>
-  </button>
+  <a href="#contact" class="nav-cta">Start a Conversation</a>
+  <button class="hbg" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob-nav" id="mobnav">
   <a href="#how-we-work" onclick="closeMenu()">How We Work</a>
   <a href="#our-work" onclick="closeMenu()">Our Work</a>
   <a href="#team" onclick="closeMenu()">Our Team</a>
-  <a href="#conversation" onclick="closeMenu()" class="mob-cta">Start a Conversation</a>
+  <a href="#contact" onclick="closeMenu()" class="mob-cta">Start a Conversation</a>
 </div>
 <div class="rr"></div>
 
 <!-- HERO -->
 <div class="hero">
   <div class="hero-l">
-    <div class="eyebrow">Value Creation Partner</div>
+    <div class="ey">Value Creation Partner</div>
     <h1>We think like <em>owners.</em><br/>We deliver like <em>operators.</em></h1>
     <p class="hero-sub">A strategy-led, execution-driven partner for growth-stage and mid-market product companies at critical inflection points. We don't hand over a strategy deck and leave — we stay until outcomes are realised.</p>
     <div class="btn-row">
-      <a href="#conversation" class="btn-p">Start a Conversation →</a>
+      <a href="#contact" class="btn-p">Start a Conversation →</a>
       <a href="#how-we-work" class="btn-g">See how we work ↓</a>
     </div>
     <div class="stats">
@@ -410,8 +300,7 @@ footer{
   </div>
   <div class="hero-r">
     <div class="hero-pw">
-      <img class="hero-img" src="mahendra-yadav.jpg" alt="Mahendra Yadav"
-        onerror="this.style.display='none';this.parentElement.style.background='var(--navy)'"/>
+      <img class="hero-img" src="mahendra-yadav.jpg" alt="Mahendra Yadav" onerror="this.style.display='none';this.parentElement.style.background='var(--navy)'"/>
       <div class="hero-ov">
         <div class="hero-name">Mahendra Yadav</div>
         <div class="hero-role">Founder & CEO</div>
@@ -427,7 +316,6 @@ footer{
 
 <!-- PROBLEM -->
 <section class="problem">
-  <svg class="pq-bg" viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff" stroke-width="1"><path d="M0,250 Q360,200 720,240 Q1080,280 1440,240"/><path d="M0,290 Q360,240 720,280 Q1080,320 1440,280"/><path d="M0,330 Q360,280 720,320 Q1080,360 1440,320"/></g></svg>
   <div class="ey">The moment you need Caizin</div>
   <h2 style="color:#fff;max-width:600px;">Your internal team can run the business. Some problems need a different kind of partner.</h2>
   <div class="prob-grid">
@@ -444,42 +332,12 @@ footer{
   <h2>Strategy. Execution. Ownership.<br/>All three. In one partner.</h2>
   <p class="sub">Most firms offer either strategy or execution. Caizin combines both — and adds a third dimension almost impossible to find: we put our own economics behind the outcomes we commit to.</p>
   <div class="diff-grid">
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-      <div class="dc-t">Strategy + Execution + Ownership</div>
-      <div class="dc-b">We define the target state, build the milestone roadmap, and execute — staying accountable until outcomes are delivered. Not a handover. A commitment.</div>
-      <div class="dc-tag">Not advisory. Not delivery. Both.</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <div class="dc-t">Operator-Led, Not Advisory</div>
-      <div class="dc-b">Our team are former founders, CEOs, CTOs, and product leaders. The people you meet on day one are in the room on day 100. We roll up our sleeves — that's the only way we know how to work.</div>
-      <div class="dc-tag">Operators, not advisors</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
-      <div class="dc-t">We Have Skin in the Game</div>
-      <div class="dc-b">For strategic engagements we defer a meaningful share of revenue and profit as a success fee — triggered only when you realise the benefit. No upside for us without upside for you.</div>
-      <div class="dc-tag">Win-win or we don't engage</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-      <div class="dc-t">Blended Execution Model</div>
-      <div class="dc-b">We work alongside your existing team, not instead of them. When we're done, your team owns everything we built together. We build capability, not dependency.</div>
-      <div class="dc-tag">Sustainable transformation</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-      <div class="dc-t">AI as a Value Multiplier</div>
-      <div class="dc-b">AI at every stage — faster discovery, accelerated delivery, product reimagination, and agentic workflow automation. AI is how we work, not a separate offering.</div>
-      <div class="dc-tag">AI-accelerated outcomes</div>
-    </div>
-    <div class="dc">
-      <div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
-      <div class="dc-t">We Understand How PE Investors Think</div>
-      <div class="dc-b">We've been on both sides of the table. We understand IRR, EBITDA timelines, exit windows, and due diligence pressure. We think in your calendar, not ours.</div>
-      <div class="dc-tag">PE-native mindset</div>
-    </div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div><div class="dc-t">Strategy + Execution + Ownership</div><div class="dc-b">We define the target state, build the milestone roadmap, and execute — staying accountable until outcomes are delivered. Not a handover. A commitment.</div><div class="dc-tag">Not advisory. Not delivery. Both.</div></div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><div class="dc-t">Operator-Led, Not Advisory</div><div class="dc-b">Our team are former founders, CEOs, CTOs, and product leaders. The people you meet on day one are in the room on day 100. We roll up our sleeves — that's the only way we know how to work.</div><div class="dc-tag">Operators, not advisors</div></div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div><div class="dc-t">We Have Skin in the Game</div><div class="dc-b">For strategic engagements we defer a meaningful share of revenue and profit as a success fee — triggered only when you realise the benefit. No upside for us without upside for you.</div><div class="dc-tag">Win-win or we don't engage</div></div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="dc-t">Blended Execution Model</div><div class="dc-b">We work alongside your existing team, not instead of them. When we're done, your team owns everything we built together. We build capability, not dependency.</div><div class="dc-tag">Sustainable transformation</div></div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div><div class="dc-t">AI as a Value Multiplier</div><div class="dc-b">AI at every stage — faster discovery, accelerated delivery, product reimagination, and agentic workflow automation. AI is how we work, not a separate offering.</div><div class="dc-tag">AI-accelerated outcomes</div></div>
+    <div class="dc"><div class="dc-ico"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><div class="dc-t">We Understand How PE Investors Think</div><div class="dc-b">We've been on both sides of the table. We understand IRR, EBITDA timelines, exit windows, and due diligence pressure. We think in your calendar, not ours.</div><div class="dc-tag">PE-native mindset</div></div>
   </div>
 </section>
 
@@ -491,26 +349,11 @@ footer{
       <h2>Strategy is not a document.<br/>It is a target state.</h2>
       <p class="sub" style="margin-bottom:0;">Our framework is built on one belief: define where the company is going — then build a practical, milestone-driven path to get there.</p>
       <div class="fw-steps" id="fsteps">
-        <div class="fs on" onclick="setStep(0)">
-          <div class="fs-num">1</div>
-          <div><div class="fs-t">Define the Target State</div><div class="fs-d">We work with CXOs to define a clear future state: product strategy, technology roadmap, platform strategy, AI opportunities, and org design. This becomes the shared decision-making framework for the entire organisation.</div></div>
-        </div>
-        <div class="fs" onclick="setStep(1)">
-          <div class="fs-num">2</div>
-          <div><div class="fs-t">Build the Business Case</div><div class="fs-d">Every initiative is prioritised by material impact on shareholder value — cost reduction, revenue growth, EBITDA improvement, risk mitigation. We give you a business case and plan, not a list of recommendations.</div></div>
-        </div>
-        <div class="fs" onclick="setStep(2)">
-          <div class="fs-num">3</div>
-          <div><div class="fs-t">Milestone-Based Roadmap</div><div class="fs-d">Execution is structured around your calendar — IPO timelines, exit windows, growth milestones. We do not consider your timelines unreasonable. We plan to meet them.</div></div>
-        </div>
-        <div class="fs" onclick="setStep(3)">
-          <div class="fs-num">4</div>
-          <div><div class="fs-t">Execute Through Blended Teams</div><div class="fs-d">Caizin's senior operators work alongside your existing team. Gaps are filled with precision. Knowledge transfers continuously. When the mission ends, your team owns what was built.</div></div>
-        </div>
-        <div class="fs" onclick="setStep(4)">
-          <div class="fs-num">5</div>
-          <div><div class="fs-t">Measure Value Creation</div><div class="fs-d">We track financial impact, operational improvement, and engineering productivity throughout. At every milestone close, we show how we performed against the original hypothesis — including the variance.</div></div>
-        </div>
+        <div class="fs on" onclick="setStep(0)"><div class="fs-num">1</div><div><div class="fs-t">Define the Target State</div><div class="fs-d">We work with CXOs to define a clear future state: product strategy, technology roadmap, platform strategy, AI opportunities, and org design. This becomes the shared decision-making framework for the entire organisation.</div></div></div>
+        <div class="fs" onclick="setStep(1)"><div class="fs-num">2</div><div><div class="fs-t">Build the Business Case</div><div class="fs-d">Every initiative is prioritised by material impact on shareholder value — cost reduction, revenue growth, EBITDA improvement, risk mitigation. We give you a business case and plan, not a list of recommendations.</div></div></div>
+        <div class="fs" onclick="setStep(2)"><div class="fs-num">3</div><div><div class="fs-t">Milestone-Based Roadmap</div><div class="fs-d">Execution is structured around your calendar — IPO timelines, exit windows, growth milestones. We do not consider your timelines unreasonable. We plan to meet them.</div></div></div>
+        <div class="fs" onclick="setStep(3)"><div class="fs-num">4</div><div><div class="fs-t">Execute Through Blended Teams</div><div class="fs-d">Caizin's senior operators work alongside your existing team. Gaps are filled with precision. Knowledge transfers continuously. When the mission ends, your team owns what was built.</div></div></div>
+        <div class="fs" onclick="setStep(4)"><div class="fs-num">5</div><div><div class="fs-t">Measure Value Creation</div><div class="fs-d">We track financial impact, operational improvement, and engineering productivity throughout. At every milestone close, we show how we performed against the original hypothesis — including the variance.</div></div></div>
       </div>
     </div>
     <div class="fw-vis">
@@ -544,7 +387,6 @@ footer{
 
 <!-- PULL QUOTE -->
 <div class="pq">
-  <svg class="pq-bg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff" stroke-width="1"><path d="M0,160 Q360,110 720,150 Q1080,190 1440,150"/><path d="M0,200 Q360,150 720,190 Q1080,230 1440,190"/><path d="M0,240 Q360,190 720,230 Q1080,270 1440,230"/></g></svg>
   <span class="pq-m">"</span>
   <div class="pq-t">We deliver shareholder value — not just software.</div>
   <div class="pq-a">The principle behind every Caizin engagement</div>
@@ -553,200 +395,24 @@ footer{
 <!-- TEAM -->
 <section class="team" id="team">
   <div class="team-intro">
-    <div>
-      <div class="ey">Our team</div>
-      <h2>Built by operators.<br/>Led by owners.</h2>
-    </div>
-    <div class="team-intro-r">
-      Caizin's team are former founders, CTOs, product leaders, and operators who have built, scaled, and sold product companies. We have been on the founder's side of the table and on the investor's side.<br/><br/>
-      The person who shows up on day one is the same person in the room on the day the milestone is delivered.
-    </div>
+    <div><div class="ey">Our team</div><h2>Built by operators.<br/>Led by owners.</h2></div>
+    <div class="team-intro-r">Caizin's team are former founders, CTOs, product leaders, and operators who have built, scaled, and sold product companies. We have been on the founder's side of the table and on the investor's side.<br/><br/>The person who shows up on day one is the same person in the room on the day the milestone is delivered.</div>
   </div>
-
   <div class="team-grid">
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">MY</div>
-        <div class="tc-name">Mahendra Yadav</div>
-        <div class="tc-role">CEO</div>
-        <a href="https://www.linkedin.com/in/mahendrayadav/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">NP</div>
-        <div class="tc-name">Nikhil Prasad</div>
-        <div class="tc-role">CTO</div>
-        <a href="https://www.linkedin.com/in/nikhilprasad/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">SS</div>
-        <div class="tc-name">Shikha Singal</div>
-        <div class="tc-role">COO</div>
-        <a href="https://www.linkedin.com/in/shikha-singal-b107b910/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">GL</div>
-        <div class="tc-name">Gurpreet Luthra</div>
-        <div class="tc-role">Principal Product Manager (Tech)</div>
-        <a href="https://www.linkedin.com/in/gurpreetluthra/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">TM</div>
-        <div class="tc-name">Tushar Maini</div>
-        <div class="tc-role">Senior Director Engineering</div>
-        <a href="https://www.linkedin.com/in/tushar-maini-98210913/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">YT</div>
-        <div class="tc-name">Yetesh Tokas</div>
-        <div class="tc-role">Principal Architect</div>
-        <a href="https://www.linkedin.com/in/yetesh-tokas-ba044b34/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">TS</div>
-        <div class="tc-name">Tanuj Saxena</div>
-        <div class="tc-role">Principal Architect</div>
-        <a href="https://www.linkedin.com/in/tanuj-saxena-364b2b4/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">NS</div>
-        <div class="tc-name">Nayab Siddiqui</div>
-        <div class="tc-role">Principal Engineer</div>
-        <a href="https://www.linkedin.com/in/siddiquinayab/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">SM</div>
-        <div class="tc-name">Sarthak Makhija</div>
-        <div class="tc-role">Principal Architect</div>
-        <a href="https://www.linkedin.com/in/sarthak-makhija/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">SM</div>
-        <div class="tc-name">Srilekha Misra</div>
-        <div class="tc-role">Principal Engineer</div>
-        <a href="https://www.linkedin.com/in/srilekhamisra/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">VB</div>
-        <div class="tc-name">Vinayak Bhadage</div>
-        <div class="tc-role">Principal Data Engineer</div>
-        <a href="https://www.linkedin.com/in/vinayakbhadage/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">AA</div>
-        <div class="tc-name">Anjali Ahirrao</div>
-        <div class="tc-role">Director, Talent Acquisition</div>
-        <a href="https://www.linkedin.com/in/anjali-ahirrao-33388b6/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">AS</div>
-        <div class="tc-name">Aastha Sharma</div>
-        <div class="tc-role">Director, HR</div>
-        <a href="https://www.linkedin.com/in/aastha-sharma-38b5805b/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
-    <div class="tc">
-      <div class="tc-top"></div>
-      <div class="tc-body">
-        <div class="tc-initials">KG</div>
-        <div class="tc-name">Kushal Gangan</div>
-        <div class="tc-role">Principal Architect (DevOps)</div>
-        <a href="https://www.linkedin.com/in/kushal-gangan/" target="_blank" rel="noopener" class="tc-li">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          LinkedIn
-        </a>
-      </div>
-    </div>
-
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">MY</div><div class="tc-name">Mahendra Yadav</div><div class="tc-role">CEO</div><a href="https://www.linkedin.com/in/mahendrayadav/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">NP</div><div class="tc-name">Nikhil Prasad</div><div class="tc-role">CTO</div><a href="https://www.linkedin.com/in/nikhilprasad/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">SS</div><div class="tc-name">Shikha Singal</div><div class="tc-role">COO</div><a href="https://www.linkedin.com/in/shikha-singal-b107b910/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">GL</div><div class="tc-name">Gurpreet Luthra</div><div class="tc-role">Principal Product Manager (Tech)</div><a href="https://www.linkedin.com/in/gurpreetluthra/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">TM</div><div class="tc-name">Tushar Maini</div><div class="tc-role">Senior Director Engineering</div><a href="https://www.linkedin.com/in/tushar-maini-98210913/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">YT</div><div class="tc-name">Yetesh Tokas</div><div class="tc-role">Principal Architect</div><a href="https://www.linkedin.com/in/yetesh-tokas-ba044b34/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">TS</div><div class="tc-name">Tanuj Saxena</div><div class="tc-role">Principal Architect</div><a href="https://www.linkedin.com/in/tanuj-saxena-364b2b4/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">NS</div><div class="tc-name">Nayab Siddiqui</div><div class="tc-role">Principal Engineer</div><a href="https://www.linkedin.com/in/siddiquinayab/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">SM</div><div class="tc-name">Sarthak Makhija</div><div class="tc-role">Principal Architect</div><a href="https://www.linkedin.com/in/sarthak-makhija/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">SM</div><div class="tc-name">Srilekha Misra</div><div class="tc-role">Principal Engineer</div><a href="https://www.linkedin.com/in/srilekhamisra/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">VB</div><div class="tc-name">Vinayak Bhadage</div><div class="tc-role">Principal Data Engineer</div><a href="https://www.linkedin.com/in/vinayakbhadage/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">AA</div><div class="tc-name">Anjali Ahirrao</div><div class="tc-role">Director, Talent Acquisition</div><a href="https://www.linkedin.com/in/anjali-ahirrao-33388b6/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">AS</div><div class="tc-name">Aastha Sharma</div><div class="tc-role">Director, HR</div><a href="https://www.linkedin.com/in/aastha-sharma-38b5805b/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
+    <div class="tc"><div class="tc-top"></div><div class="tc-body"><div class="tc-ini">KG</div><div class="tc-name">Kushal Gangan</div><div class="tc-role">Principal Architect (DevOps)</div><a href="https://www.linkedin.com/in/kushal-gangan/" target="_blank" rel="noopener" class="tc-li"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a></div></div>
   </div>
 </section>
 
@@ -777,91 +443,103 @@ footer{
   </div>
 </section>
 
-<!-- INSIGHTS — hidden, ready to unhide -->
+<!-- INSIGHTS — hidden, uncomment .insights{display:block} to show -->
 <section class="insights" id="insights">
   <div class="ey">Insights</div>
   <h2>How Caizin thinks.</h2>
   <p class="sub">Perspectives from our team on value creation, transformation, and the inflection points that define product companies.</p>
   <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px;">
-    <a href="#" style="border-radius:4px;overflow:hidden;border:0.5px solid var(--g100);text-decoration:none;display:block;">
+    <a href="#" style="border-radius:4px;overflow:hidden;border:.5px solid var(--g100);text-decoration:none;display:block;transition:box-shadow .2s,transform .2s;">
       <div style="height:140px;background:var(--navy);display:flex;align-items:center;justify-content:center;"><span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;">Framework</span></div>
-      <div style="padding:18px 16px 20px;">
-        <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">Strategy</div>
-        <div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">Strategy is not a document. It's a target state — and a path to reach it.</div>
-        <div style="font-size:12.5px;color:var(--g600);line-height:1.6;">Why the traditional definition of strategy fails product companies at inflection points.</div>
-      </div>
+      <div style="padding:18px 16px 20px;"><div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">Strategy</div><div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">Strategy is not a document. It's a target state — and a path to reach it.</div><div style="font-size:12.5px;color:var(--g600);line-height:1.6;">Why the traditional definition of strategy fails product companies at inflection points.</div></div>
       <div style="padding:11px 16px;background:var(--off);font-size:11px;color:var(--g400);display:flex;justify-content:space-between;"><span>Mahendra Yadav</span><span>8 min read →</span></div>
     </a>
-    <a href="#" style="border-radius:4px;overflow:hidden;border:0.5px solid var(--g100);text-decoration:none;display:block;">
+    <a href="#" style="border-radius:4px;overflow:hidden;border:.5px solid var(--g100);text-decoration:none;display:block;">
       <div style="height:140px;background:var(--navy2);display:flex;align-items:center;justify-content:center;"><span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;">PE Playbook</span></div>
-      <div style="padding:18px 16px 20px;">
-        <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">Private Equity</div>
-        <div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">How to prepare your platform for PE exit in 18 months.</div>
-        <div style="font-size:12.5px;color:var(--g600);line-height:1.6;">The engineering, cost, and org changes that matter most to acquirers and due diligence teams.</div>
-      </div>
+      <div style="padding:18px 16px 20px;"><div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">Private Equity</div><div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">How to prepare your platform for PE exit in 18 months.</div><div style="font-size:12.5px;color:var(--g600);line-height:1.6;">The engineering, cost, and org changes that matter most to acquirers and due diligence teams.</div></div>
       <div style="padding:11px 16px;background:var(--off);font-size:11px;color:var(--g400);display:flex;justify-content:space-between;"><span>Caizin Leadership</span><span>12 min read →</span></div>
     </a>
-    <a href="#" style="border-radius:4px;overflow:hidden;border:0.5px solid var(--g100);text-decoration:none;display:block;">
+    <a href="#" style="border-radius:4px;overflow:hidden;border:.5px solid var(--g100);text-decoration:none;display:block;">
       <div style="height:140px;background:#0a1535;display:flex;align-items:center;justify-content:center;"><span style="font-size:11px;font-weight:700;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.08em;">Coming Soon</span></div>
-      <div style="padding:18px 16px 20px;">
-        <div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">AI Transformation</div>
-        <div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">The operator vs. advisor distinction — why it determines whether transformation succeeds.</div>
-        <div style="font-size:12.5px;color:var(--g600);line-height:1.6;">Coming soon — subscribe to receive it when published.</div>
-      </div>
+      <div style="padding:18px 16px 20px;"><div style="font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.09em;margin-bottom:7px;">AI Transformation</div><div style="font-size:14px;font-weight:700;color:var(--navy);line-height:1.4;margin-bottom:7px;">The operator vs. advisor distinction — why it determines whether transformation succeeds.</div><div style="font-size:12.5px;color:var(--g600);line-height:1.6;">Coming soon — subscribe to receive it when published.</div></div>
       <div style="padding:11px 16px;background:var(--off);font-size:11px;color:var(--g400);display:flex;justify-content:space-between;"><span>Caizin Leadership</span><span>Publishing shortly</span></div>
     </a>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta" id="conversation">
-  <svg class="cta-bg" viewBox="0 0 1440 500" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice"><g fill="none" stroke="#fff" stroke-width="1"><path d="M0,200 Q360,150 720,190 Q1080,230 1440,190"/><path d="M0,240 Q360,190 720,230 Q1080,270 1440,230"/><path d="M900,0 Q1100,80 1440,60"/><path d="M940,0 Q1140,90 1440,80"/></g></svg>
-  <div class="cta-ey">Start a Conversation</div>
-  <h2>We have a small number of open conversations at any time.</h2>
-  <p class="cta-sub">If your company is at an inflection point and you're looking for a partner who will <em>own the outcome alongside you</em> — we'd like to hear about it.</p>
-  <div class="cta-form">
-    <div class="cta-row2">
-      <input class="ci" type="text" placeholder="Your name"/>
-      <input class="ci" type="email" placeholder="Work email"/>
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="cs-inner">
+    <div class="cs-left">
+      <div class="cs-ey">Start a Conversation</div>
+      <div class="cs-h2">We have a small number of open conversations at any time.</div>
+      <p class="cs-sub">If your company is at an inflection point and you're looking for a partner who will <em>own the outcome alongside you</em> — we'd like to hear about it.</p>
+      <div class="cs-form">
+        <div class="cs-row">
+          <input class="ci" type="text" placeholder="Your name"/>
+          <input class="ci" type="email" placeholder="Work email"/>
+        </div>
+        <input class="ci" style="width:100%;" type="text" placeholder="Company · Role · What's the challenge?"/>
+        <a href="mailto:hello@caizin.com" class="cs-btn">Request a Conversation →</a>
+      </div>
+      <div class="cs-note">We respond to every request personally. No automated sequences. No SDR follow-up calls.</div>
     </div>
-    <input class="ci" style="width:100%;" type="text" placeholder="Company · Role · What's the challenge?"/>
-    <a href="#" class="cta-btn">Request a Conversation →</a>
+    <div class="cs-right">
+      <div class="addr-card">
+        <div class="addr-flag">🇺🇸</div>
+        <div class="addr-country">United States</div>
+        <div class="addr-city">Caizin, LLC</div>
+        <div class="addr-detail">17126 NE 83rd CT<br/>Redmond, WA 98052</div>
+        <a href="tel:+13203058553" class="addr-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.53 6.53l1.24-1.32a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +1 (320) 305 8553
+        </a>
+      </div>
+      <div class="addr-card">
+        <div class="addr-flag">🇮🇳</div>
+        <div class="addr-country">India — Operations</div>
+        <div class="addr-city">Pune, Maharashtra</div>
+        <div class="addr-detail">1301/1302, Tower 2, Phoenix Fountain Head<br/>Viman Nagar, Pune MH – 411014</div>
+        <a href="tel:+918297608886" class="addr-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.53 6.53l1.24-1.32a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          +91 82976 08886
+        </a>
+      </div>
+      <div class="addr-card" style="background:rgba(255,255,255,.03);border-color:rgba(255,255,255,.07);">
+        <div class="addr-flag">🏢</div>
+        <div class="addr-country">India — Registered Office</div>
+        <div class="addr-city">4ESoftware Private Limited</div>
+        <div class="addr-detail">Kalpataru Regency Phase 2<br/>Kalyani Nagar, Pune 411006</div>
+        <div class="addr-gst">GST: 27AABCZ6814D1ZC</div>
+      </div>
+      <div class="addr-social">
+        <div class="addr-social-label">Connect with us</div>
+        <div class="addr-social-links">
+          <a href="https://www.linkedin.com/company/caizin" target="_blank" rel="noopener" class="addr-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+          <a href="https://caizin.com" target="_blank" rel="noopener" class="addr-social-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>caizin.com</a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="cta-note">We respond to every request personally. No automated sequences. No SDR follow-up calls.</div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div>
-    <div class="fl">caizin<span>.</span></div>
-    <div class="ft">raise the bar</div>
-  </div>
+  <div><div class="fl">caizin<span>.</span></div><div class="ft">raise the bar</div></div>
   <div class="flinks">
     <a href="#how-we-work">How We Work</a>
     <a href="#our-work">Our Work</a>
     <a href="#team">Our Team</a>
-    <a href="#conversation">Contact</a>
+    <a href="#contact">Contact</a>
   </div>
   <div class="fcopy">© 2026 Caizin. All rights reserved.</div>
 </footer>
 
 <script>
-function toggleMenu(){
-  var h=document.getElementById('hbg');
-  var m=document.getElementById('mobnav');
-  h.classList.toggle('open');
-  m.classList.toggle('open');
-}
-function closeMenu(){
-  document.getElementById('hbg').classList.remove('open');
-  document.getElementById('mobnav').classList.remove('open');
-}
+function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
+function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
 var cur=0;
-function setStep(n){
-  document.querySelectorAll('.fs').forEach(function(s,i){s.classList.toggle('on',i===n);});
-  document.querySelectorAll('.fvs').forEach(function(s,i){s.classList.toggle('on',i===n);});
-  cur=n;
-}
+function setStep(n){document.querySelectorAll('.fs').forEach(function(s,i){s.classList.toggle('on',i===n);});document.querySelectorAll('.fvs').forEach(function(s,i){s.classList.toggle('on',i===n);});cur=n;}
 setInterval(function(){setStep((cur+1)%5);},3200);
 </script>
 </body>
