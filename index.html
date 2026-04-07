@@ -193,6 +193,9 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 .cs-btn{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;margin-top:4px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 28px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
 .cs-btn:hover{background:var(--redh);transform:translateY(-1px);}
 .cs-note{font-size:11px;color:rgba(255,255,255,.22);margin-top:12px;}
+.cs-expect{list-style:none;display:flex;flex-direction:column;gap:14px;margin:28px 0 32px;}
+.cs-expect li{display:flex;align-items:flex-start;gap:12px;font-size:14px;color:rgba(255,255,255,.65);line-height:1.55;}
+.cs-expect li::before{content:'';width:14px;height:1.5px;flex-shrink:0;margin-top:10px;background:var(--red);border-radius:1px;}
 /* address cards */
 .cs-right{display:flex;flex-direction:column;gap:16px;padding-top:8px;}
 .addr-card{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.1);border-radius:6px;padding:22px 20px;transition:background .2s;}
@@ -472,15 +475,21 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
       <div class="cs-ey">Start a Conversation</div>
       <div class="cs-h2">We have a small number of open conversations at any time.</div>
       <p class="cs-sub">If your company is at an inflection point and you're looking for a partner who will <em>own the outcome alongside you</em> — we'd like to hear about it.</p>
+      <ul class="cs-expect">
+        <li>Personal response within 24 hours — no automated sequences, no SDR follow-up calls.</li>
+        <li>A focused discovery call to understand your challenge — not a pitch for our services.</li>
+        <li>An honest assessment of fit. If we are not the right partner for your situation, we will tell you.</li>
+      </ul>
       <div class="cs-form">
-        <div class="cs-row">
-          <input class="ci" type="text" placeholder="Your name"/>
-          <input class="ci" type="email" placeholder="Work email"/>
+        <div style="display:none;">
+          <div class="cs-row">
+            <input class="ci" type="text" placeholder="Your name"/>
+            <input class="ci" type="email" placeholder="Work email"/>
+          </div>
+          <input class="ci" style="width:100%;" type="text" placeholder="Company · Role · What's the challenge?"/>
         </div>
-        <input class="ci" style="width:100%;" type="text" placeholder="Company · Role · What's the challenge?"/>
-        <a href="mailto:hello@caizin.com" class="cs-btn">Request a Conversation →</a>
+        <a href="mailto:contact@caizin.com" class="cs-btn">Request a Conversation →</a>
       </div>
-      <div class="cs-note">We respond to every request personally. No automated sequences. No SDR follow-up calls.</div>
     </div>
     <div class="cs-right">
       <div class="addr-card">
