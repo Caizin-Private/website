@@ -20,8 +20,8 @@ body{font-family:var(--f);color:var(--navy);background:var(--w);overflow-x:hidde
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:.5px solid var(--g100);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
 .logo{text-decoration:none;}
-.logo-n{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1;}
-.logo-n span{color:var(--red);}
+.logo-n{font-size:19px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1;position:relative;display:inline-block;}
+.logo-n::after{content:'';position:absolute;top:0;right:-11px;width:14px;height:2px;background:var(--red);border-radius:1px;}
 .logo-t{font-size:8px;color:var(--g400);letter-spacing:.1em;text-transform:uppercase;margin-top:1px;}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{font-size:13px;color:var(--g600);text-decoration:none;transition:color .2s;}
@@ -214,8 +214,8 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 
 /* ── FOOTER ── */
 footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
-.fl{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.03em;}
-.fl span{color:var(--red);}
+.fl{font-size:15px;font-weight:800;color:#fff;letter-spacing:-.03em;position:relative;display:inline-block;}
+.fl::after{content:'';position:absolute;top:0;right:-9px;width:11px;height:2px;background:var(--red);border-radius:1px;}
 .ft{font-size:8.5px;color:rgba(255,255,255,.2);margin-top:3px;letter-spacing:.1em;text-transform:uppercase;}
 .flinks{display:flex;gap:22px;flex-wrap:wrap;}
 .flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
@@ -266,7 +266,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo"><div class="logo-n">caizin<span>.</span></div><div class="logo-t">raise the bar</div></a>
+  <a href="#" class="logo"><div class="logo-n">caizin</div><div class="logo-t">raise the bar</div></a>
   <ul class="nav-links">
     <li><a href="#how-we-work">How We Work</a></li>
     <li><a href="#our-work">Our Work</a></li>
@@ -532,7 +532,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- FOOTER -->
 <footer>
-  <div><div class="fl">caizin<span>.</span></div><div class="ft">raise the bar</div></div>
+  <div><div class="fl">caizin</div><div class="ft">raise the bar</div></div>
   <div class="flinks">
     <a href="#how-we-work">How We Work</a>
     <a href="#our-work">Our Work</a>
