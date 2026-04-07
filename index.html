@@ -8,7 +8,7 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico"/>
 <style>
 :root{
-  --navy:#0D1E4C;--navy2:#162660;--red:#C41230;--redh:#e8142f;
+  --navy:#0D1E4C;--navy2:#162660;--red:#BE0D42;--redh:#d4104a;
   --w:#fff;--off:#f6f7fa;--off2:#eef0f5;
   --g100:#e4e6ee;--g200:#c8ccd8;--g400:#8892aa;--g600:#4a5468;
   --f:'Segoe UI',system-ui,-apple-system,sans-serif;
@@ -20,10 +20,8 @@ body{font-family:var(--f);color:var(--navy);background:var(--w);overflow-x:hidde
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:.5px solid var(--g100);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
 .logo{text-decoration:none;}
-.logo-n{font-size:22px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1;position:relative;display:inline-block;}
-.logo-n::after{content:'';position:absolute;top:0;right:-13px;width:16px;height:2px;background:var(--red);border-radius:1px;}
-.logo-ai{color:var(--red);}
-.logo-t{font-size:8.5px;color:var(--g600);letter-spacing:.1em;text-transform:uppercase;margin-top:2px;}
+.logo-img{height:34px;width:auto;display:block;}
+.logo-t{font-size:8.5px;color:var(--g600);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
 .nav-links{display:flex;gap:28px;list-style:none;}
 .nav-links a{font-size:13px;color:var(--g600);text-decoration:none;transition:color .2s;}
 .nav-links a:hover{color:var(--navy);}
@@ -215,8 +213,7 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 
 /* ── FOOTER ── */
 footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
-.fl{font-size:18px;font-weight:800;color:#fff;letter-spacing:-.03em;position:relative;display:inline-block;}
-.fl::after{content:'';position:absolute;top:0;right:-11px;width:13px;height:2px;background:var(--red);border-radius:1px;}
+.footer-logo-img{height:28px;width:auto;display:block;}
 .ft{font-size:8.5px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.1em;text-transform:uppercase;}
 .flinks{display:flex;gap:22px;flex-wrap:wrap;}
 .flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
@@ -267,7 +264,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo"><div class="logo-n">c<span class="logo-ai">ai</span>zin</div><div class="logo-t">raise the bar</div></a>
+  <a href="#" class="logo"><img src="caizin-website-logo.svg" alt="Caizin" class="logo-img"/><div class="logo-t">raise the bar</div></a>
   <ul class="nav-links">
     <li><a href="#how-we-work">How We Work</a></li>
     <li><a href="#our-work">Our Work</a></li>
@@ -533,7 +530,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- FOOTER -->
 <footer>
-  <div><div class="fl">c<span class="logo-ai">ai</span>zin</div><div class="ft">raise the bar</div></div>
+  <div><img src="caizin-website-inverted-logo.svg" alt="Caizin" class="footer-logo-img"/><div class="ft">raise the bar</div></div>
   <div class="flinks">
     <a href="#how-we-work">How We Work</a>
     <a href="#our-work">Our Work</a>
