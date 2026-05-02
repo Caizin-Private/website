@@ -101,31 +101,36 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 
 /* ── FRAMEWORK ── */
 .framework{background:var(--w);}
-.fw-wrap{display:grid;grid-template-columns:1fr 1.3fr;gap:8%;align-items:start;}
-.fw-steps{display:flex;flex-direction:column;margin-top:32px;}
-.fs{display:flex;gap:16px;padding:16px 0;border-bottom:.5px solid var(--g100);cursor:pointer;position:relative;transition:padding-left .2s;}
+.fw-intro{margin-bottom:32px;max-width:620px;}
+.fw-wrap{display:grid;grid-template-columns:1fr 1.4fr;gap:7%;align-items:start;}
+.fw-nav{display:flex;flex-direction:column;}
+.fs{display:flex;gap:16px;padding:16px 0;border-bottom:.5px solid var(--g100);cursor:pointer;position:relative;transition:padding-left .2s;align-items:flex-start;}
 .fs:last-child{border-bottom:none;}
-.fs.on{padding-left:10px;}
+.fs.on{padding-left:12px;}
 .fs.on::before{content:'';position:absolute;left:0;top:12px;bottom:12px;width:2px;background:var(--red);border-radius:1px;}
-.fs-num{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--g100);color:var(--g400);transition:all .2s;}
+.fs-num{width:28px;height:28px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;background:var(--g100);color:var(--g400);transition:all .2s;margin-top:2px;}
 .fs.on .fs-num{background:var(--red);color:#fff;}
-.fs-t{font-size:14.5px;font-weight:700;color:var(--navy);margin-bottom:3px;}
-.fs-d{font-size:13px;color:var(--g600);line-height:1.6;display:none;}
-.fs.on .fs-d{display:block;}
-.fw-vis{background:var(--navy);border-radius:6px;padding:36px 32px;position:sticky;top:80px;}
-.fv-t{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px;}
-.fv-stages{display:flex;flex-direction:column;gap:9px;}
-.fvs{display:flex;gap:11px;padding:13px 14px;border-radius:4px;background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.07);transition:all .2s;}
-.fvs.on{background:rgba(196,18,48,.12);border-color:rgba(196,18,48,.3);}
-.fvs-n{width:24px;height:24px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:rgba(255,255,255,.07);color:rgba(255,255,255,.38);transition:all .2s;}
-.fvs.on .fvs-n{background:var(--red);color:#fff;}
-.fvs-name{font-size:12.5px;font-weight:600;color:rgba(255,255,255,.42);transition:all .2s;}
-.fvs.on .fvs-name{color:#fff;}
-.fvs-d{font-size:11px;color:rgba(255,255,255,.28);line-height:1.5;margin-top:2px;transition:all .2s;}
-.fvs.on .fvs-d{color:rgba(255,255,255,.52);}
-.fw-ai{margin-top:18px;padding:14px;border-radius:4px;background:rgba(196,18,48,.08);border:.5px solid rgba(196,18,48,.2);}
-.fw-ai-l{font-size:10px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
-.fw-ai-t{font-size:11.5px;color:rgba(255,255,255,.48);line-height:1.55;}
+.fs-t{font-size:15px;font-weight:700;color:var(--g400);transition:color .2s;margin-bottom:3px;}
+.fs.on .fs-t{color:var(--navy);}
+.fs-sub{font-size:11px;color:var(--g400);line-height:1.4;opacity:.7;}
+.fw-detail{position:sticky;top:80px;display:flex;flex-direction:column;}
+.fwd{display:none;background:var(--navy);border-radius:6px;padding:0 36px 36px;flex:1;overflow:hidden;}
+.fwd.on{display:flex;flex-direction:column;animation:fwdIn .35s ease;}
+@keyframes fwdIn{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
+.fwd-progress{height:3px;background:rgba(255,255,255,.08);flex-shrink:0;margin:0 -36px 18px;}
+.fwd-label{font-size:9px;font-weight:700;color:rgba(255,255,255,.28);text-transform:uppercase;letter-spacing:.16em;margin-bottom:18px;}
+.fwd-bar{height:100%;width:0%;background:var(--red);}
+.fwd.on .fwd-bar{animation:fwdProg 5.5s linear forwards;}
+@keyframes fwdProg{from{width:0%;}to{width:100%;}}
+.fwd-n{font-size:72px;font-weight:800;color:rgba(255,255,255,.04);line-height:1;margin-bottom:2px;letter-spacing:-.03em;}
+.fwd-title{font-size:22px;font-weight:800;color:#fff;line-height:1.3;margin-bottom:18px;}
+.fwd-desc{font-size:14px;color:rgba(255,255,255,.62);line-height:1.75;margin-bottom:26px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08);}
+.fwd-out-l{font-size:9px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.12em;margin-bottom:10px;}
+.fwd-out{font-size:13px;color:rgba(255,255,255,.5);line-height:1.65;font-style:italic;border-left:2px solid rgba(190,13,66,.5);padding-left:14px;}
+.fwd-ai{margin-top:auto;padding-top:18px;border-top:1px solid rgba(255,255,255,.07);}
+.fwd-ai-l{font-size:9px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.12em;margin-bottom:5px;}
+.fwd-ai-t{font-size:11.5px;color:rgba(255,255,255,.32);line-height:1.55;}
+.fw-note{margin-top:16px;padding-top:16px;font-size:11.5px;color:var(--g400);line-height:1.55;}
 
 /* ── IMPACT ── */
 .impact{background:var(--off);}
@@ -241,7 +246,8 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   .prob-grid{grid-template-columns:1fr;}
   .diff-grid{grid-template-columns:1fr 1fr;}
   .fw-wrap{grid-template-columns:1fr;}
-  .fw-vis{position:static;margin-top:32px;}
+  .fw-detail{position:static;margin-top:24px;}
+  .fw-intro{margin-bottom:32px;}
   .imp-grid{grid-template-columns:1fr 1fr;}
   .team-intro{grid-template-columns:1fr;}
   .team-grid{grid-template-columns:repeat(2,1fr);}
@@ -347,29 +353,71 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- FRAMEWORK -->
 <section class="framework">
+  <div class="fw-intro">
+    <div class="ey">The Caizin Value Creation Framework</div>
+    <h2>Strategy is not a document.<br/>It is a target state.</h2>
+    <p class="sub" style="margin-bottom:0;">Our framework is built on one belief: define where the company is going — then build a practical, milestone-driven path to get there.</p>
+  </div>
   <div class="fw-wrap">
-    <div>
-      <div class="ey">The Caizin Value Creation Framework</div>
-      <h2>Strategy is not a document.<br/>It is a target state.</h2>
-      <p class="sub" style="margin-bottom:0;">Our framework is built on one belief: define where the company is going — then build a practical, milestone-driven path to get there.</p>
-      <div class="fw-steps" id="fsteps">
-        <div class="fs on" onclick="setStep(0)"><div class="fs-num">1</div><div><div class="fs-t">Define the Target State</div><div class="fs-d">We work with CXOs to define a clear future state: product strategy, technology roadmap, platform strategy, AI opportunities, and org design. This becomes the shared decision-making framework for the entire organisation.</div></div></div>
-        <div class="fs" onclick="setStep(1)"><div class="fs-num">2</div><div><div class="fs-t">Build the Business Case</div><div class="fs-d">Every initiative is prioritised by material impact on shareholder value — cost reduction, revenue growth, EBITDA improvement, risk mitigation. We give you a business case and plan, not a list of recommendations.</div></div></div>
-        <div class="fs" onclick="setStep(2)"><div class="fs-num">3</div><div><div class="fs-t">Milestone-Based Roadmap</div><div class="fs-d">Execution is structured around your calendar — IPO timelines, exit windows, growth milestones. We do not consider your timelines unreasonable. We plan to meet them.</div></div></div>
-        <div class="fs" onclick="setStep(3)"><div class="fs-num">4</div><div><div class="fs-t">Execute Through Blended Teams</div><div class="fs-d">Caizin's senior operators work alongside your existing team. Gaps are filled with precision. Knowledge transfers continuously. When the mission ends, your team owns what was built.</div></div></div>
-        <div class="fs" onclick="setStep(4)"><div class="fs-num">5</div><div><div class="fs-t">Measure Value Creation</div><div class="fs-d">We track financial impact, operational improvement, and engineering productivity throughout. At every milestone close, we show how we performed against the original hypothesis — including the variance.</div></div></div>
-      </div>
+    <div class="fw-nav" id="fsteps">
+      <div class="fs on" onclick="setStep(0)"><div class="fs-num">1</div><div><div class="fs-t">Define the Target State</div><div class="fs-sub">Product strategy · Tech roadmap · Org design · AI</div></div></div>
+      <div class="fs" onclick="setStep(1)"><div class="fs-num">2</div><div><div class="fs-t">Build the Business Case</div><div class="fs-sub">EBITDA · IRR · Revenue potential · Risk</div></div></div>
+      <div class="fs" onclick="setStep(2)"><div class="fs-num">3</div><div><div class="fs-t">Milestone-Based Roadmap</div><div class="fs-sub">Aligned to IPO · Exit · Growth calendar</div></div></div>
+      <div class="fs" onclick="setStep(3)"><div class="fs-num">4</div><div><div class="fs-t">Execute Through Blended Teams</div><div class="fs-sub">Joint teams · Senior operators · Knowledge transfer</div></div></div>
+      <div class="fs" onclick="setStep(4)"><div class="fs-num">5</div><div><div class="fs-t">Measure Value Creation</div><div class="fs-sub">Financial outcomes · Milestone proof · Variance</div></div></div>
+      <div class="fw-note">A five-stage framework built for PE-backed and high-growth product companies. Every stage produces a concrete deliverable.</div>
     </div>
-    <div class="fw-vis">
-      <div class="fv-t">Caizin Value Creation Framework</div>
-      <div class="fv-stages">
-        <div class="fvs on" id="fvs0"><div class="fvs-n">1</div><div><div class="fvs-name">Define Target State</div><div class="fvs-d">Product strategy · Tech roadmap · Org design · AI</div></div></div>
-        <div class="fvs" id="fvs1"><div class="fvs-n">2</div><div><div class="fvs-name">Build Business Case</div><div class="fvs-d">EBITDA · IRR · Revenue potential · Risk</div></div></div>
-        <div class="fvs" id="fvs2"><div class="fvs-n">3</div><div><div class="fvs-name">Milestone Roadmap</div><div class="fvs-d">Aligned to IPO · Exit · Growth calendar</div></div></div>
-        <div class="fvs" id="fvs3"><div class="fvs-n">4</div><div><div class="fvs-name">Blended Execution</div><div class="fvs-d">Joint teams · Senior operators · Knowledge transfer</div></div></div>
-        <div class="fvs" id="fvs4"><div class="fvs-n">5</div><div><div class="fvs-name">Measure Value Creation</div><div class="fvs-d">Financial outcomes · Milestone proof · Variance</div></div></div>
+    <div class="fw-detail">
+      <div class="fwd on" id="fwd0">
+        <div class="fwd-progress"><div class="fwd-bar"></div></div>
+        <div class="fwd-label">Caizin Value Creation Framework</div>
+        <div class="fwd-n">01</div>
+        <div class="fwd-title">Define the Target State</div>
+        <div class="fwd-desc">We work with CXOs to define a clear future state: product strategy, technology roadmap, platform strategy, AI opportunities, and org design. This becomes the shared decision-making framework for the entire organisation.</div>
+        <div class="fwd-out-l">Output</div>
+        <div class="fwd-out">A shared target-state document covering product, technology, and org design — signed off at CXO level and used as the decision-making reference for every initiative that follows.</div>
+        <div class="fwd-ai"><div class="fwd-ai-l">AI accelerates every stage</div><div class="fwd-ai-t">Faster discovery. Faster delivery. Product reimagination. AI is how we execute, not a separate workstream.</div></div>
       </div>
-      <div class="fw-ai"><div class="fw-ai-l">AI accelerates every stage</div><div class="fw-ai-t">Faster discovery. Faster delivery. Product reimagination. Agentic workflow automation. AI is how we execute, not a separate workstream.</div></div>
+      <div class="fwd" id="fwd1">
+        <div class="fwd-progress"><div class="fwd-bar"></div></div>
+        <div class="fwd-label">Caizin Value Creation Framework</div>
+        <div class="fwd-n">02</div>
+        <div class="fwd-title">Build the Business Case</div>
+        <div class="fwd-desc">Every initiative is prioritised by material impact on shareholder value — cost reduction, revenue growth, EBITDA improvement, risk mitigation. We give you a business case and plan, not a list of recommendations.</div>
+        <div class="fwd-out-l">Output</div>
+        <div class="fwd-out">A prioritised initiative list, each with a validated business case, IRR model, and explicit go/no-go recommendation — before a line of code is written.</div>
+        <div class="fwd-ai"><div class="fwd-ai-l">AI accelerates every stage</div><div class="fwd-ai-t">Faster discovery. Faster delivery. Product reimagination. AI is how we execute, not a separate workstream.</div></div>
+      </div>
+      <div class="fwd" id="fwd2">
+        <div class="fwd-progress"><div class="fwd-bar"></div></div>
+        <div class="fwd-label">Caizin Value Creation Framework</div>
+        <div class="fwd-n">03</div>
+        <div class="fwd-title">Milestone-Based Roadmap</div>
+        <div class="fwd-desc">Execution is structured around your calendar — IPO timelines, exit windows, growth milestones. We do not consider your timelines unreasonable. We plan to meet them.</div>
+        <div class="fwd-out-l">Output</div>
+        <div class="fwd-out">A milestone roadmap tied to your IPO window, exit timeline, or growth calendar — with named owners, clear gates, and no open-ended delivery horizons.</div>
+        <div class="fwd-ai"><div class="fwd-ai-l">AI accelerates every stage</div><div class="fwd-ai-t">Faster discovery. Faster delivery. Product reimagination. AI is how we execute, not a separate workstream.</div></div>
+      </div>
+      <div class="fwd" id="fwd3">
+        <div class="fwd-progress"><div class="fwd-bar"></div></div>
+        <div class="fwd-label">Caizin Value Creation Framework</div>
+        <div class="fwd-n">04</div>
+        <div class="fwd-title">Execute Through Blended Teams</div>
+        <div class="fwd-desc">Caizin's senior operators work alongside your existing team. Gaps are filled with precision. Knowledge transfers continuously. When the mission ends, your team owns what was built.</div>
+        <div class="fwd-out-l">Output</div>
+        <div class="fwd-out">Working software and operational improvements delivered by joint teams — with full knowledge transfer so your organisation owns every outcome, not Caizin.</div>
+        <div class="fwd-ai"><div class="fwd-ai-l">AI accelerates every stage</div><div class="fwd-ai-t">Faster discovery. Faster delivery. Product reimagination. AI is how we execute, not a separate workstream.</div></div>
+      </div>
+      <div class="fwd" id="fwd4">
+        <div class="fwd-progress"><div class="fwd-bar"></div></div>
+        <div class="fwd-label">Caizin Value Creation Framework</div>
+        <div class="fwd-n">05</div>
+        <div class="fwd-title">Measure Value Creation</div>
+        <div class="fwd-desc">We track financial impact, operational improvement, and engineering productivity throughout. At every milestone close, we show how we performed against the original hypothesis — including the variance.</div>
+        <div class="fwd-out-l">Output</div>
+        <div class="fwd-out">A milestone close report showing realised financial impact against the original hypothesis — including full variance analysis and a clear view of what was delivered versus what was promised.</div>
+        <div class="fwd-ai"><div class="fwd-ai-l">AI accelerates every stage</div><div class="fwd-ai-t">Faster discovery. Faster delivery. Product reimagination. AI is how we execute, not a separate workstream.</div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -563,9 +611,17 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 <script>
 function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
 function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
-var cur=0;
-function setStep(n){document.querySelectorAll('.fs').forEach(function(s,i){s.classList.toggle('on',i===n);});document.querySelectorAll('.fvs').forEach(function(s,i){s.classList.toggle('on',i===n);});cur=n;}
-setInterval(function(){setStep((cur+1)%5);},3200);
+var cur=0,timer;
+function startTimer(){clearInterval(timer);timer=setInterval(function(){setStep((cur+1)%5);},5500);}
+function setStep(n){
+  document.querySelectorAll('.fs').forEach(function(s,i){s.classList.toggle('on',i===n);});
+  document.querySelectorAll('.fwd').forEach(function(s,i){
+    s.classList.toggle('on',i===n);
+    if(i===n){var b=s.querySelector('.fwd-bar');if(b){b.style.animation='none';b.offsetHeight;b.style.animation='';}}
+  });
+  cur=n;startTimer();
+}
+startTimer();
 </script>
 </body>
 </html>
