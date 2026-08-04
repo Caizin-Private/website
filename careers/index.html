@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Careers at Caizin — Where Excellence Meets Purpose</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%230D1E4C'/><text y='.9em' font-size='72' font-family='Segoe UI,Arial,sans-serif' font-weight='800' fill='white' x='50' text-anchor='middle' dominant-baseline='top' dy='8'>C</text></svg>"/>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<style>
+:root{
+  --navy:#0D1E4C;--navy2:#162660;--red:#BE0D42;--redh:#d4104a;
+  --w:#fff;--off:#f6f7fa;--off2:#eef0f5;
+  --g100:#e4e6ee;--g200:#c8ccd8;--g400:#8892aa;--g600:#4a5468;
+  --f:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);color:var(--navy);background:var(--w);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:.5px solid var(--g100);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.logo{text-decoration:none;}
+.logo-img{height:34px;width:auto;display:block;}
+.logo-t{font-size:8.5px;color:var(--g600);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--g600);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-links a.active{color:var(--navy);font-weight:600;}
+.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--red);padding:9px 20px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+.nav-cta:hover{background:var(--redh);}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hbg span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
+.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.open span:nth-child(2){opacity:0;}
+.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:#fff;border-bottom:.5px solid var(--g100);padding:12px 5% 18px;flex-direction:column;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-size:15px;color:var(--g600);text-decoration:none;padding:13px 0;border-bottom:.5px solid var(--g100);transition:color .2s;}
+.mob-nav a.mob-cta{margin-top:10px;background:var(--red);color:#fff;padding:13px 16px;border-radius:3px;text-align:center;font-weight:600;border-bottom:none;}
+
+/* ── RED RULE ── */
+.rr{height:3px;background:var(--red);margin-top:62px;}
+
+.ey{display:flex;align-items:center;gap:10px;margin-bottom:26px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;}
+.ey::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
+h1{font-size:clamp(30px,3.8vw,54px);font-weight:800;color:var(--navy);line-height:1.06;letter-spacing:-.025em;margin-bottom:22px;}
+h1 em{color:var(--red);font-style:normal;}
+.btn-row{display:flex;gap:14px;align-items:center;flex-wrap:wrap;}
+.btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
+.btn-p:hover{background:var(--redh);transform:translateY(-1px);}
+.btn-g{font-size:13px;color:var(--g600);text-decoration:none;border-bottom:1px solid var(--g200);padding-bottom:2px;transition:color .2s,border-color .2s;}
+.btn-g:hover{color:var(--navy);border-color:var(--navy);}
+
+/* ── SECTIONS ── */
+section{padding:80px 8%;}
+h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
+.sub{font-size:clamp(14px,1.3vw,16px);color:var(--g600);line-height:1.75;max-width:600px;}
+
+/* ── HERO ── */
+.chero{display:grid;grid-template-columns:1.15fr .85fr;min-height:78vh;align-items:center;gap:4%;}
+.chero-l{padding:7% 2% 6% 8%;}
+.chero-sub{font-size:clamp(14px,1.35vw,16.5px);color:var(--g600);line-height:1.75;max-width:520px;margin-bottom:36px;}
+.chero-r{display:flex;align-items:center;justify-content:center;padding:6% 8% 6% 2%;}
+.gptw-badge-card{display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--off);border:.5px solid var(--g100);border-radius:14px;padding:32px 28px 26px;box-shadow:0 8px 32px rgba(13,30,76,.08);}
+.gptw-badge-card img{width:100%;max-width:220px;height:auto;display:block;}
+.gptw-badge-cap{font-size:12px;color:var(--g600);text-align:center;line-height:1.5;}
+.gptw-badge-cap strong{color:var(--navy);}
+.gptw-history{width:100%;margin-top:2px;padding-top:14px;border-top:.5px solid var(--g200);display:flex;flex-direction:column;gap:7px;}
+.gptw-history-label{font-size:9.5px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.09em;text-align:center;margin-bottom:2px;}
+.gptw-history-row{display:flex;align-items:center;justify-content:center;gap:7px;font-size:11.5px;color:var(--g600);}
+.gptw-history-row::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0;}
+
+/* ── GPTW STRIP ── */
+.gptw{background:var(--navy);position:relative;overflow:hidden;padding:56px 8%;}
+.gptw-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;text-align:center;gap:28px;}
+.gptw-h{font-size:clamp(20px,2.4vw,30px);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.01em;max-width:560px;}
+.gptw-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:780px;}
+.gptw-pill{background:rgba(255,255,255,.06);border:.5px solid rgba(255,255,255,.12);border-radius:6px;padding:20px 16px;transition:background .2s;}
+.gptw-pill:hover{background:rgba(255,255,255,.1);}
+.gptw-pill-t{font-size:14.5px;font-weight:700;color:#fff;margin-bottom:4px;}
+.gptw-pill-s{font-size:12px;color:rgba(255,255,255,.55);}
+
+/* ── AMBITIONBOX ── */
+.ambox{background:var(--w);text-align:center;}
+.ambox-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;margin-top:40px;}
+.ambox-row img{display:block;width:100%;height:auto;}
+.ambox-row img.ambox-overall{max-width:340px;}
+.ambox-row img.ambox-ratings{max-width:520px;}
+
+
+/* ── CULTURE GRID ── */
+.culture{background:var(--off);}
+.culture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px;}
+.culture-item{border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(13,30,76,.06);position:relative;aspect-ratio:4/3;}
+.culture-item img,.culture-item video{width:100%;height:100%;object-fit:cover;display:block;}
+.culture-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,30,76,.75),transparent);color:#fff;font-size:12.5px;padding:14px 16px 10px;}
+
+/* ── CLOSING CTA ── */
+.closing{background:var(--w);text-align:center;padding:80px 8%;}
+.closing-t{font-size:clamp(20px,2.6vw,32px);font-weight:800;color:var(--navy);max-width:640px;margin:0 auto 28px;line-height:1.3;}
+
+/* ── FOOTER ── */
+footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
+.footer-logo-img{height:28px;width:auto;display:block;}
+.ft{font-size:8.5px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.1em;text-transform:uppercase;}
+.flinks{display:flex;gap:22px;flex-wrap:wrap;}
+.flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+.flinks a:hover{color:#fff;}
+.fcopy{font-size:11px;color:rgba(255,255,255,.18);}
+.footer-social{display:flex;gap:12px;align-items:center;}
+.fsoc{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:rgba(255,255,255,.35);border:.5px solid rgba(255,255,255,.1);transition:all .2s;text-decoration:none;}
+.fsoc:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .nav-links{display:none;}
+  .hbg{display:flex;}
+  .chero{grid-template-columns:1fr;}
+  .chero-l{padding:7% 6% 0 6%;}
+  .chero-r{padding:6% 6% 4%;}
+  .gptw-pills{grid-template-columns:1fr;}
+}
+@media(max-width:600px){
+  section{padding:60px 5%;}
+  .chero-l{padding:6% 5% 0 5%;}
+  .culture-grid{grid-template-columns:1fr;}
+  .flinks{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="logo"><img src="/caizin-website-logo.svg" alt="Caizin" class="logo-img"/><div class="logo-t">raise the bar</div></a>
+  <ul class="nav-links">
+    <li><a href="/#how-we-work">How We Work</a></li>
+    <li><a href="/#our-work">Our Work</a></li>
+    <li><a href="/#team">Our Team</a></li>
+    <li><a href="/careers/" class="active">Careers</a></li>
+    <li><a href="/#contact">Contact</a></li>
+  </ul>
+  <button class="hbg" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobnav">
+  <a href="/#how-we-work" onclick="closeMenu()">How We Work</a>
+  <a href="/#our-work" onclick="closeMenu()">Our Work</a>
+  <a href="/#team" onclick="closeMenu()">Our Team</a>
+  <a href="/careers/" onclick="closeMenu()">Careers</a>
+  <a href="/#contact" onclick="closeMenu()">Contact</a>
+</div>
+<div class="rr"></div>
+
+<!-- HERO -->
+<div class="chero">
+  <div class="chero-l">
+    <div class="ey">Careers at Caizin</div>
+    <h1>Where <em>Excellence</em> Meets Purpose</h1>
+    <p class="chero-sub">We're a team that shows up for each other — curious by nature, driven by purpose, and grounded in values that actually mean something. Whatever you do, you'll find real ownership, real growth, and people who've got your back, on your best days and your hardest ones.</p>
+    <div class="btn-row">
+      <a href="#culture" class="btn-g">See our culture ↓</a>
+    </div>
+  </div>
+  <div class="chero-r">
+    <div class="gptw-badge-card">
+      <img src="media/gptw-badge.png" alt="Great Place To Work Certified, May 2026 to May 2027, India" loading="eager"/>
+      <div class="gptw-badge-cap">Proud to be <strong>Great Place To Work® Certified</strong></div>
+      <div class="gptw-history">
+        <div class="gptw-history-label">Also Certified In</div>
+        <div class="gptw-history-row">Feb 2025 – Feb 2026</div>
+        <div class="gptw-history-row">Mar 2023 – Mar 2024</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- GREAT PLACE TO WORK STRIP -->
+<section class="gptw" style="padding-top:56px;padding-bottom:56px;">
+  <div class="gptw-inner">
+    <div class="gptw-h">Our people are at the heart of everything we do — here's what that looks like in practice.</div>
+    <div class="gptw-pills">
+      <div class="gptw-pill">
+        <div class="gptw-pill-t">Meaningful Work</div>
+        <div class="gptw-pill-s">Purpose-driven, every day</div>
+      </div>
+      <div class="gptw-pill">
+        <div class="gptw-pill-t">Inclusive Culture</div>
+        <div class="gptw-pill-s">Everyone belongs</div>
+      </div>
+      <div class="gptw-pill">
+        <div class="gptw-pill-t">Growth Mindset</div>
+        <div class="gptw-pill-s">Learn. Lead. Thrive.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMBITIONBOX -->
+<section class="ambox">
+  <div class="ey" style="justify-content:center;">Rated By Our Own People</div>
+  <h2>What our employees say, on the record</h2>
+  <p class="sub" style="margin:0 auto;">We're rated on AmbitionBox by the people who'd know best — our own team.</p>
+  <div class="ambox-row">
+    <img class="ambox-overall" src="media/ambitionbox-overall.png" alt="Rated 4.3 by our employees on AmbitionBox"/>
+    <img class="ambox-ratings" src="media/ambitionbox-ratings.png" alt="AmbitionBox category ratings: Work-Life Balance 4.3, Company Culture 4.2, Work Satisfaction 4.1, Skill Development 4.0"/>
+  </div>
+</section>
+
+<!-- CULTURE -->
+<section class="culture" id="culture">
+  <div class="ey">Life at Caizin</div>
+  <h2>A place where you're trusted to bring your authentic self</h2>
+  <p class="sub">We do the right thing. We pursue excellence. We own our impact. We lead with empathy.</p>
+  <div class="culture-grid">
+    <div class="culture-item">
+      <img src="media/team-plane.jpg" alt="Team celebrating together on a trip"/>
+      <div class="culture-cap">Celebrating wins together, wherever we are</div>
+    </div>
+    <div class="culture-item">
+      <img src="media/team-villa-night.jpg" alt="Team gathered together in the evening"/>
+      <div class="culture-cap">Team time that feels like family time</div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="closing">
+  <div class="ey" style="justify-content:center;">Come As You Are</div>
+  <div class="closing-t">You don't need to have it all figured out. Just a willingness to grow, and people who'll back you.</div>
+  <div class="btn-row" style="justify-content:center;">
+    <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" class="btn-p">Explore Open Roles at Caizin →</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div><img src="/caizin-website-inverted-logo.svg" alt="Caizin" class="footer-logo-img"/><div class="ft">raise the bar</div></div>
+  <div class="flinks">
+    <a href="/#how-we-work">How We Work</a>
+    <a href="/#our-work">Our Work</a>
+    <a href="/#team">Our Team</a>
+    <a href="/careers/">Careers</a>
+    <a href="/#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/caizin/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@caizincommune" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#060d20"/></svg>
+    </a>
+    <a href="https://www.instagram.com/caizin_raisethebar/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </div>
+  <div class="fcopy">© 2026 Caizin. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
+function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
+</script>
+</body>
+</html>
