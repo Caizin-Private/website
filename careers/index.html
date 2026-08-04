@@ -57,11 +57,19 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 .sub{font-size:clamp(14px,1.3vw,16px);color:var(--g600);line-height:1.75;max-width:600px;}
 
 /* ── HERO ── */
-.chero{display:grid;grid-template-columns:1.15fr .85fr;min-height:78vh;align-items:center;gap:4%;}
-.chero-l{padding:7% 2% 6% 8%;}
-.chero-sub{font-size:clamp(14px,1.35vw,16.5px);color:var(--g600);line-height:1.75;max-width:520px;margin-bottom:36px;}
-.chero-r{display:flex;align-items:center;justify-content:center;padding:6% 8% 6% 2%;}
-.gptw-badge-card{display:flex;flex-direction:column;align-items:center;gap:14px;background:var(--off);border:.5px solid var(--g100);border-radius:14px;padding:32px 28px 26px;box-shadow:0 8px 32px rgba(13,30,76,.08);}
+.chero{display:grid;grid-template-columns:1.15fr .85fr;min-height:78vh;align-items:center;gap:4%;position:relative;overflow:hidden;}
+.chero-bg{position:absolute;inset:0;background-image:url('media/Caizin-Black-GPTW-Group-Photo-11.jpeg');background-size:cover;background-position:center 25%;}
+.chero-overlay{position:absolute;inset:0;background:linear-gradient(100deg, rgba(13,30,76,.94) 0%, rgba(13,30,76,.82) 38%, rgba(13,30,76,.45) 68%, rgba(13,30,76,.2) 100%);}
+.chero-l{position:relative;z-index:2;padding:7% 2% 6% 8%;}
+.chero-l .ey{color:#f5a3b8;}
+.chero-l .ey::before{background:#f5a3b8;}
+.chero-l h1{color:#fff;}
+.chero-l h1 em{color:#ff5c85;}
+.chero-sub{font-size:clamp(14px,1.35vw,16.5px);color:rgba(255,255,255,.8);line-height:1.75;max-width:520px;margin-bottom:36px;}
+.chero-l .btn-g{color:#fff;border-color:rgba(255,255,255,.4);}
+.chero-l .btn-g:hover{color:#fff;border-color:#fff;}
+.chero-r{position:relative;z-index:2;display:flex;align-items:flex-end;justify-content:flex-end;padding:6% 6% 5% 2%;}
+.gptw-badge-card{display:flex;flex-direction:column;align-items:center;gap:14px;background:rgba(246,247,250,.96);backdrop-filter:blur(8px);border:.5px solid var(--g100);border-radius:14px;padding:32px 28px 26px;box-shadow:0 8px 32px rgba(13,30,76,.25);}
 .gptw-badge-card img{width:100%;max-width:220px;height:auto;display:block;}
 .gptw-badge-cap{font-size:12px;color:var(--g600);text-align:center;line-height:1.5;}
 .gptw-badge-cap strong{color:var(--navy);}
@@ -153,6 +161,8 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 
 <!-- HERO -->
 <div class="chero">
+  <div class="chero-bg"></div>
+  <div class="chero-overlay"></div>
   <div class="chero-l">
     <div class="ey">Careers at Caizin</div>
     <h1>Where <em>Excellence</em> Meets Purpose</h1>
