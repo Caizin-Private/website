@@ -51,6 +51,21 @@ h1 em{color:var(--red);font-style:normal;}
 .btn-g{font-size:13px;color:var(--g600);text-decoration:none;border-bottom:1px solid var(--g200);padding-bottom:2px;transition:color .2s,border-color .2s;}
 .btn-g:hover{color:var(--navy);border-color:var(--navy);}
 
+/* ── DEMO: mockup picker dropdown (remove with the .mockpick markup) ── */
+.mockpick{position:relative;display:inline-block;text-align:left;}
+.mockpick-btn{border:none;cursor:pointer;font-family:inherit;}
+.mockpick-caret{font-size:11px;transition:transform .2s;}
+.mockpick.open .mockpick-caret{transform:rotate(180deg);}
+.mockpick-menu{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);min-width:320px;background:#fff;border:1px solid var(--g100);border-radius:6px;box-shadow:0 16px 44px rgba(13,30,76,.18);padding:7px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:150;}
+.mockpick.open .mockpick-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
+.mockpick-menu a{display:block;padding:9px 12px;border-radius:4px;text-decoration:none;transition:background .15s;}
+.mockpick-menu a:hover{background:var(--off);}
+.mockpick-menu a strong{display:block;font-size:13.5px;font-weight:600;color:var(--navy);}
+.mockpick-menu a span{display:block;font-size:11.5px;color:var(--g400);margin-top:2px;line-height:1.4;}
+.mockpick-div{height:1px;background:var(--g100);margin:6px 4px;}
+.mockpick-hd{font-size:10px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.1em;padding:4px 12px 6px;}
+@media(max-width:600px){.mockpick-menu{min-width:min(320px,88vw);}}
+
 /* ── SECTIONS ── */
 section{padding:80px 8%;}
 h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
@@ -90,18 +105,47 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-heigh
 
 /* ── AMBITIONBOX ── */
 .ambox{background:var(--w);text-align:center;}
-.ambox-row{display:flex;align-items:center;justify-content:center;gap:56px;flex-wrap:wrap;margin-top:40px;}
+.ambox-row{display:flex;align-items:center;justify-content:center;margin-top:44px;}
 .ambox-row img{display:block;width:100%;height:auto;}
-.ambox-row img.ambox-overall{max-width:340px;}
-.ambox-row img.ambox-ratings{max-width:520px;}
+.ambox-row img.ambox-ratings{max-width:640px;margin:0 auto;}
 
 
-/* ── CULTURE GRID ── */
+/* ── WORK AT CAIZIN ── */
+.work{background:var(--off2);}
+.work-pills{display:flex;flex-wrap:wrap;gap:14px;margin-top:44px;}
+.work-pill{background:#fff;border:.5px solid var(--g100);border-radius:10px;padding:16px 20px;box-shadow:0 1px 3px rgba(13,30,76,.05);transition:box-shadow .2s,transform .15s;max-width:340px;}
+.work-pill:hover{box-shadow:0 8px 20px rgba(13,30,76,.1);transform:translateY(-2px);}
+.work-pill-tag{display:block;font-size:10.5px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}
+.work-pill-t{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.4;}
+@media (max-width:640px){.work-pill{max-width:none;width:100%;}}
+
+/* ── CULTURE CAROUSEL ── */
 .culture{background:var(--off);}
-.culture-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px;}
-.culture-item{border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(13,30,76,.06);position:relative;aspect-ratio:4/3;}
-.culture-item img,.culture-item video{width:100%;height:100%;object-fit:cover;display:block;}
+.culture-carousel{margin-top:44px;overflow-x:auto;overflow-y:hidden;-webkit-overflow-scrolling:touch;scrollbar-width:none;cursor:grab;}
+.culture-carousel::-webkit-scrollbar{display:none;}
+.culture-carousel.dragging{cursor:grabbing;scroll-behavior:auto;}
+.culture-track{display:flex;gap:18px;width:max-content;}
+.culture-item{flex:0 0 auto;width:320px;border-radius:6px;overflow:hidden;box-shadow:0 1px 3px rgba(13,30,76,.06);position:relative;aspect-ratio:4/3;cursor:pointer;}
+.culture-item img,.culture-item video{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none;}
 .culture-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(13,30,76,.75),transparent);color:#fff;font-size:12.5px;padding:14px 16px 10px;}
+@media (max-width:640px){.culture-item{width:240px;}}
+
+/* ── CULTURE LIGHTBOX ── */
+.culture-lightbox{position:fixed;inset:0;background:rgba(6,13,32,.88);display:flex;align-items:center;justify-content:center;gap:20px;padding:40px;z-index:1000;opacity:0;visibility:hidden;transition:opacity .2s ease;}
+.culture-lightbox.open{opacity:1;visibility:visible;}
+.culture-lightbox-inner{position:relative;max-width:min(90vw,900px);max-height:90vh;}
+.culture-lightbox-inner img{display:block;max-width:100%;max-height:80vh;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.culture-lightbox-cap{color:#fff;font-size:14px;margin-top:14px;text-align:center;}
+.culture-lightbox-close{position:absolute;top:-42px;right:-8px;background:none;border:none;color:#fff;font-size:32px;line-height:1;cursor:pointer;padding:6px;}
+.culture-lightbox-nav{background:rgba(255,255,255,.1);border:none;color:#fff;font-size:36px;line-height:1;cursor:pointer;padding:0;width:52px;height:52px;border-radius:50%;flex:0 0 auto;display:flex;align-items:center;justify-content:center;transition:background .15s ease;}
+.culture-lightbox-nav:hover{background:rgba(255,255,255,.2);}
+@media (max-width:640px){
+  .culture-lightbox{padding:20px;}
+  .culture-lightbox-close{top:-40px;right:0;}
+  .culture-lightbox-nav{width:40px;height:40px;font-size:28px;position:absolute;top:50%;transform:translateY(-50%);background:rgba(6,13,32,.5);}
+  .culture-lightbox-prev{left:8px;}
+  .culture-lightbox-next{right:8px;}
+}
 
 /* ── CLOSING CTA ── */
 .closing{background:var(--w);text-align:center;padding:80px 8%;}
@@ -131,7 +175,6 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 @media(max-width:600px){
   section{padding:60px 5%;}
   .chero-l{padding:6% 5% 0 5%;}
-  .culture-grid{grid-template-columns:1fr;}
   .flinks{display:none;}
 }
 </style>
@@ -211,8 +254,48 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <h2>What our employees say, on the record</h2>
   <p class="sub" style="margin:0 auto;">We're rated on AmbitionBox by the people who'd know best — our own team.</p>
   <div class="ambox-row">
-    <img class="ambox-overall" src="media/ambitionbox-overall.png" alt="Rated 4.3 by our employees on AmbitionBox"/>
-    <img class="ambox-ratings" src="media/ambitionbox-ratings.png" alt="AmbitionBox category ratings: Work-Life Balance 4.3, Company Culture 4.2, Work Satisfaction 4.1, Skill Development 4.0"/>
+    <img class="ambox-ratings" src="media/ambitionbox-ratings.png" alt="AmbitionBox top 4 category ratings: Work-Life Balance 4.3, Company Culture 4.2, Work Satisfaction 4.1, Skill Development 4.0"/>
+  </div>
+</section>
+
+<!-- WORK AT CAIZIN -->
+<section class="work" id="work">
+  <div class="ey">What Caizinites Have Built</div>
+  <h2>The kind of work you could be part of</h2>
+  <p class="sub">A sample of real projects our teams have delivered, to give you a sense of the problems you might work on here.</p>
+  <div class="work-pills">
+    <div class="work-pill">
+      <span class="work-pill-tag">Search &amp; Data Engineering</span>
+      <span class="work-pill-t">Distributed search on petabyte-scale email data on S3</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Optimization Engineering</span>
+      <span class="work-pill-t">Platform for label printing optimization</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Cybersecurity</span>
+      <span class="work-pill-t">Cyber security product for endpoint devices</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Data Platforms</span>
+      <span class="work-pill-t">Large scale communication compliance data platform</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">AI / Developer Tooling</span>
+      <span class="work-pill-t">AI accelerated SDLC framework with knowledge brain and context engineering</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Compilers &amp; Language Tooling</span>
+      <span class="work-pill-t">Language transpiler from legacy stack to Java/.NET</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Cloud Platform Engineering</span>
+      <span class="work-pill-t">Multi-tenant-aware engineering platform for development, hosting, storage, and runtime of enterprise applications on AWS</span>
+    </div>
+    <div class="work-pill">
+      <span class="work-pill-tag">Enterprise Transformation</span>
+      <span class="work-pill-t">Multi-year organizational transformation initiatives, from discovery to go-live, across enterprises with $250M&ndash;$500M in revenue</span>
+    </div>
   </div>
 </section>
 
@@ -221,14 +304,48 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="ey">Life at Caizin</div>
   <h2>A place where you're trusted to bring your authentic self</h2>
   <p class="sub">We do the right thing. We pursue excellence. We own our impact. We lead with empathy.</p>
-  <div class="culture-grid">
-    <div class="culture-item">
-      <img src="media/team-plane.jpg" alt="Team celebrating together on a trip"/>
-      <div class="culture-cap">Celebrating wins together, wherever we are</div>
-    </div>
-    <div class="culture-item">
-      <img src="media/team-villa-night.jpg" alt="Team gathered together in the evening"/>
-      <div class="culture-cap">Team time that feels like family time</div>
+  <div class="culture-carousel" id="cultureCarousel">
+    <div class="culture-track" id="cultureTrack">
+      <div class="culture-item">
+        <img src="carousel-photos/team-plane.jpg" alt="Team giving peace signs on a flight together"/>
+        <div class="culture-cap">Wheels up for our team trip</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Group-Airport.png" alt="Team gathered at the airport with luggage"/>
+        <div class="culture-cap">Off on our annual team trip</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Caizin-Fly.jpg" alt="Colleagues laughing while flying a paper plane in the office"/>
+        <div class="culture-cap">Paper planes and festive cheer in the office</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Group-Traditional-In-Office-Caizin.jpg" alt="Team dressed in festive traditional wear in the office"/>
+        <div class="culture-cap">Festive spirit right in the workplace</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Group-Caizin-Traditional.jpg" alt="Team dressed in traditional wear in front of the Caizin sign"/>
+        <div class="culture-cap">Dressed in tradition, celebrating together</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Key-Value-Store-Workshop-Caizin.jpg" alt="Team member presenting a technical workshop"/>
+        <div class="culture-cap">Learning together, one tech talk at a time</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/Learning-never-stops-here.jpeg" alt="Team collaborating around a whiteboard full of sticky notes"/>
+        <div class="culture-cap">Learning never stops here</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/New-office-ribbon.jpg" alt="New Caizin office reception decorated for the ribbon-cutting"/>
+        <div class="culture-cap">Opening the doors to our new office</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/New-office-opening.jpg" alt="Team cutting the ribbon to open the new office"/>
+        <div class="culture-cap">Cutting the ribbon on a new chapter</div>
+      </div>
+      <div class="culture-item">
+        <img src="carousel-photos/New-office-recruitment-team.jpg" alt="Recruitment team celebrating in the new office"/>
+        <div class="culture-cap">Meet our recruitment team</div>
+      </div>
     </div>
   </div>
 </section>
@@ -238,7 +355,25 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="ey" style="justify-content:center;">Come As You Are</div>
   <div class="closing-t">You don't need to have it all figured out. Just a willingness to grow, and people who'll back you.</div>
   <div class="btn-row" style="justify-content:center;">
-    <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" class="btn-p">Explore Open Roles at Caizin →</a>
+    <!-- ══ DEMO: banner mockup picker. To restore the plain link, delete this <div class="mockpick"> block
+             and uncomment the original <a> below, then remove the .mockpick CSS and toggleMockPick() script. ══ -->
+    <div class="mockpick" id="mockpick">
+      <button type="button" class="btn-p mockpick-btn" id="mockpick-btn" aria-haspopup="true" aria-expanded="false" onclick="toggleMockPick(event)">
+        Explore Open Roles at Caizin <span class="mockpick-caret" aria-hidden="true">▾</span>
+      </button>
+      <div class="mockpick-menu" id="mockpick-menu" role="menu" aria-labelledby="mockpick-btn">
+        <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" role="menuitem">
+          <strong>Live Keka page ↗</strong><span>What candidates see today</span>
+        </a>
+        <div class="mockpick-div"></div>
+        <div class="mockpick-hd">Banner mockups</div>
+        <a href="keka-mock-1.html" role="menuitem"><strong>1 · No photo</strong><span>Navy only, current design</span></a>
+        <a href="keka-mock-2.html" role="menuitem"><strong>2 · GPTW group photo</strong><span>60+ people, uniformed, highest resolution</span></a>
+        <a href="keka-mock-3.html" role="menuitem"><strong>3 · Team 2025 photo</strong><span>~20 people, daylight, widest crop</span></a>
+        <a href="keka-mock-4.html" role="menuitem"><strong>4 · Hallway photo</strong><span>~25 people, festive, lowest resolution</span></a>
+      </div>
+    </div>
+    <!-- Original link: <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" class="btn-p">Explore Open Roles at Caizin →</a> -->
   </div>
 </section>
 
@@ -266,9 +401,174 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="fcopy">© 2026 Caizin. All rights reserved.</div>
 </footer>
 
+<!-- CULTURE LIGHTBOX -->
+<div class="culture-lightbox" id="cultureLightbox">
+  <button type="button" class="culture-lightbox-nav culture-lightbox-prev" id="cultureLightboxPrev" aria-label="Previous photo">&#8249;</button>
+  <div class="culture-lightbox-inner">
+    <button type="button" class="culture-lightbox-close" id="cultureLightboxClose" aria-label="Close">&times;</button>
+    <img id="cultureLightboxImg" src="" alt=""/>
+    <div class="culture-lightbox-cap" id="cultureLightboxCap"></div>
+  </div>
+  <button type="button" class="culture-lightbox-nav culture-lightbox-next" id="cultureLightboxNext" aria-label="Next photo">&#8250;</button>
+</div>
+
 <script>
 function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
 function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
+
+/* ── DEMO: mockup picker dropdown (remove with the .mockpick markup) ── */
+function setMockPick(open){
+  var w=document.getElementById('mockpick');
+  if(!w)return;
+  w.classList.toggle('open',open);
+  document.getElementById('mockpick-btn').setAttribute('aria-expanded',open?'true':'false');
+}
+function toggleMockPick(e){
+  e.stopPropagation();
+  setMockPick(!document.getElementById('mockpick').classList.contains('open'));
+}
+document.addEventListener('click',function(e){
+  var w=document.getElementById('mockpick');
+  if(w&&!w.contains(e.target))setMockPick(false);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')setMockPick(false);
+});
+
+/* ── CULTURE CAROUSEL: auto-scroll right-to-left, pausable, draggable ── */
+(function(){
+  var carousel=document.getElementById('cultureCarousel');
+  var track=document.getElementById('cultureTrack');
+  if(!carousel||!track)return;
+
+  var originalItems=Array.from(track.children).map(function(el){
+    var img=el.querySelector('img'), cap=el.querySelector('.culture-cap');
+    return {src:img.src,alt:img.alt,cap:cap?cap.textContent:''};
+  });
+  var originalCount=originalItems.length;
+
+  track.innerHTML+=track.innerHTML; /* duplicate items for a seamless loop */
+
+  var paused=false, resumeTimer=null, speed=0.6, inView=false, lightboxOpen=false;
+
+  var viewObserver=new IntersectionObserver(function(entries){
+    inView=entries[0].isIntersecting;
+  },{threshold:0.1});
+  viewObserver.observe(carousel);
+
+  function autoScroll(){
+    if(!paused&&inView){
+      carousel.scrollLeft+=speed;
+      if(carousel.scrollLeft>=track.scrollWidth/2){
+        carousel.scrollLeft-=track.scrollWidth/2;
+      }
+    }
+    requestAnimationFrame(autoScroll);
+  }
+  requestAnimationFrame(autoScroll);
+
+  function pauseThenResume(){
+    paused=true;
+    clearTimeout(resumeTimer);
+    if(lightboxOpen)return;
+    resumeTimer=setTimeout(function(){if(!lightboxOpen)paused=false;},2500);
+  }
+
+  carousel.addEventListener('mouseenter',function(){paused=true;});
+  carousel.addEventListener('mouseleave',function(){clearTimeout(resumeTimer);if(!lightboxOpen)paused=false;});
+  carousel.addEventListener('wheel',pauseThenResume,{passive:true});
+  carousel.addEventListener('touchstart',function(){paused=true;},{passive:true});
+  carousel.addEventListener('touchend',pauseThenResume);
+
+  var isDown=false, startX=0, startScroll=0, dragDistance=0;
+  carousel.addEventListener('mousedown',function(e){
+    isDown=true;
+    paused=true;
+    dragDistance=0;
+    carousel.classList.add('dragging');
+    startX=e.pageX;
+    startScroll=carousel.scrollLeft;
+  });
+  window.addEventListener('mouseup',function(){
+    if(!isDown)return;
+    isDown=false;
+    carousel.classList.remove('dragging');
+    pauseThenResume();
+  });
+  window.addEventListener('mousemove',function(e){
+    if(!isDown)return;
+    e.preventDefault();
+    var delta=e.pageX-startX;
+    dragDistance=Math.abs(delta);
+    carousel.scrollLeft=startScroll-delta;
+  });
+
+  /* ── LIGHTBOX ── */
+  var lightbox=document.getElementById('cultureLightbox');
+  var lightboxImg=document.getElementById('cultureLightboxImg');
+  var lightboxCap=document.getElementById('cultureLightboxCap');
+  var lightboxClose=document.getElementById('cultureLightboxClose');
+  var lightboxPrev=document.getElementById('cultureLightboxPrev');
+  var lightboxNext=document.getElementById('cultureLightboxNext');
+  var currentIndex=0;
+
+  function renderLightbox(){
+    var d=originalItems[currentIndex];
+    lightboxImg.src=d.src;
+    lightboxImg.alt=d.alt;
+    lightboxCap.textContent=d.cap;
+  }
+  function showPrev(){
+    currentIndex=(currentIndex-1+originalCount)%originalCount;
+    renderLightbox();
+  }
+  function showNext(){
+    currentIndex=(currentIndex+1)%originalCount;
+    renderLightbox();
+  }
+  function openLightbox(index){
+    currentIndex=index;
+    renderLightbox();
+    lightbox.classList.add('open');
+    paused=true;
+    lightboxOpen=true;
+    clearTimeout(resumeTimer);
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('open');
+    lightboxOpen=false;
+    pauseThenResume();
+  }
+
+  carousel.addEventListener('click',function(e){
+    if(dragDistance>5)return; /* was a drag, not a click */
+    var item=e.target.closest('.culture-item');
+    if(!item)return;
+    var index=Array.from(track.children).indexOf(item)%originalCount;
+    openLightbox(index);
+  });
+  lightboxClose.addEventListener('click',closeLightbox);
+  lightboxPrev.addEventListener('click',function(e){e.stopPropagation();showPrev();});
+  lightboxNext.addEventListener('click',function(e){e.stopPropagation();showNext();});
+  lightbox.addEventListener('click',function(e){
+    if(e.target===lightbox)closeLightbox();
+  });
+  document.addEventListener('keydown',function(e){
+    if(!lightbox.classList.contains('open'))return;
+    if(e.key==='Escape')closeLightbox();
+    else if(e.key==='ArrowLeft')showPrev();
+    else if(e.key==='ArrowRight')showNext();
+  });
+
+  var touchStartX=null;
+  lightbox.addEventListener('touchstart',function(e){touchStartX=e.changedTouches[0].screenX;},{passive:true});
+  lightbox.addEventListener('touchend',function(e){
+    if(touchStartX===null)return;
+    var delta=e.changedTouches[0].screenX-touchStartX;
+    if(Math.abs(delta)>40){delta<0?showNext():showPrev();}
+    touchStartX=null;
+  });
+})();
 </script>
 </body>
 </html>
