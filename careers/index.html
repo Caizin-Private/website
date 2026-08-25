@@ -51,21 +51,6 @@ h1 em{color:var(--red);font-style:normal;}
 .btn-g{font-size:13px;color:var(--g600);text-decoration:none;border-bottom:1px solid var(--g200);padding-bottom:2px;transition:color .2s,border-color .2s;}
 .btn-g:hover{color:var(--navy);border-color:var(--navy);}
 
-/* ── DEMO: mockup picker dropdown (remove with the .mockpick markup) ── */
-.mockpick{position:relative;display:inline-block;text-align:left;}
-.mockpick-btn{border:none;cursor:pointer;font-family:inherit;}
-.mockpick-caret{font-size:11px;transition:transform .2s;}
-.mockpick.open .mockpick-caret{transform:rotate(180deg);}
-.mockpick-menu{position:absolute;bottom:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(6px);min-width:320px;background:#fff;border:1px solid var(--g100);border-radius:6px;box-shadow:0 16px 44px rgba(13,30,76,.18);padding:7px;opacity:0;visibility:hidden;transition:opacity .18s,transform .18s,visibility .18s;z-index:150;}
-.mockpick.open .mockpick-menu{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0);}
-.mockpick-menu a{display:block;padding:9px 12px;border-radius:4px;text-decoration:none;transition:background .15s;}
-.mockpick-menu a:hover{background:var(--off);}
-.mockpick-menu a strong{display:block;font-size:13.5px;font-weight:600;color:var(--navy);}
-.mockpick-menu a span{display:block;font-size:11.5px;color:var(--g400);margin-top:2px;line-height:1.4;}
-.mockpick-div{height:1px;background:var(--g100);margin:6px 4px;}
-.mockpick-hd{font-size:10px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.1em;padding:4px 12px 6px;}
-@media(max-width:600px){.mockpick-menu{min-width:min(320px,88vw);}}
-
 /* ── SECTIONS ── */
 section{padding:80px 8%;}
 h2{font-size:clamp(24px,2.8vw,38px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;}
@@ -355,23 +340,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="ey" style="justify-content:center;">Come As You Are</div>
   <div class="closing-t">You don't need to have it all figured out. Just a willingness to grow, and people who'll back you.</div>
   <div class="btn-row" style="justify-content:center;">
-    <!-- ══ DEMO: banner mockup picker. To restore the plain link, delete this <div class="mockpick"> block
-             and uncomment the original <a> below, then remove the .mockpick CSS and toggleMockPick() script. ══ -->
-    <div class="mockpick" id="mockpick">
-      <button type="button" class="btn-p mockpick-btn" id="mockpick-btn" aria-haspopup="true" aria-expanded="false" onclick="toggleMockPick(event)">
-        Explore Open Roles at Caizin <span class="mockpick-caret" aria-hidden="true">▾</span>
-      </button>
-      <div class="mockpick-menu" id="mockpick-menu" role="menu" aria-labelledby="mockpick-btn">
-        <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" role="menuitem">
-          <strong>Live Keka page ↗</strong><span>What candidates see today</span>
-        </a>
-        <div class="mockpick-div"></div>
-        <div class="mockpick-hd">Banner mockups</div>
-        <a href="keka-mock-1.html" role="menuitem"><strong>1 · No photo</strong><span>Navy only, current design</span></a>
-        <a href="keka-mock-2.html" role="menuitem"><strong>2 · GPTW group photo</strong><span>60+ people, uniformed, highest resolution</span></a>
-      </div>
-    </div>
-    <!-- Original link: <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" class="btn-p">Explore Open Roles at Caizin →</a> -->
+    <a href="https://caizin.keka.com/careers/" target="_blank" rel="noopener" class="btn-p">Explore Open Roles at Caizin →</a>
   </div>
 </section>
 
@@ -413,25 +382,6 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 <script>
 function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
 function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
-
-/* ── DEMO: mockup picker dropdown (remove with the .mockpick markup) ── */
-function setMockPick(open){
-  var w=document.getElementById('mockpick');
-  if(!w)return;
-  w.classList.toggle('open',open);
-  document.getElementById('mockpick-btn').setAttribute('aria-expanded',open?'true':'false');
-}
-function toggleMockPick(e){
-  e.stopPropagation();
-  setMockPick(!document.getElementById('mockpick').classList.contains('open'));
-}
-document.addEventListener('click',function(e){
-  var w=document.getElementById('mockpick');
-  if(w&&!w.contains(e.target))setMockPick(false);
-});
-document.addEventListener('keydown',function(e){
-  if(e.key==='Escape')setMockPick(false);
-});
 
 /* ── CULTURE CAROUSEL: auto-scroll right-to-left, pausable, draggable ── */
 (function(){
