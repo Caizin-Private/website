@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>How Caizin Helped TQMI Put AI to Work in Its Consulting — Caizin Case Study</title>
+<meta name="description" content="A Caizin case study: how TQMI's consultants adopted AI on live client deliverables, with ten documented use cases and 25 to 75 percent time saved."/>
+<link rel="icon" type="image/x-icon" href="../favicon.ico"/>
+<style>
+:root{
+  --navy:#0D1E4C;--navy2:#162660;--red:#BE0D42;--redh:#d4104a;
+  --w:#fff;--off:#f6f7fa;--off2:#eef0f5;
+  --g100:#e4e6ee;--g200:#c8ccd8;--g400:#8892aa;--g600:#4a5468;
+  --f:'Segoe UI',system-ui,-apple-system,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--f);color:var(--navy);background:var(--w);overflow-x:hidden;}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;height:62px;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);border-bottom:.5px solid var(--g100);display:flex;align-items:center;justify-content:space-between;padding:0 5%;}
+.logo{text-decoration:none;}
+.logo-img{height:34px;width:auto;display:block;}
+.logo-t{font-size:8.5px;color:var(--g600);letter-spacing:.1em;text-transform:uppercase;margin-top:3px;}
+.nav-links{display:flex;gap:28px;list-style:none;}
+.nav-links a{font-size:13px;color:var(--g600);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--navy);}
+.nav-cta{font-size:13px;font-weight:600;color:#fff;background:var(--red);padding:9px 20px;border-radius:3px;text-decoration:none;white-space:nowrap;transition:background .2s;}
+.nav-cta:hover{background:var(--redh);}
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hbg span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:all .3s;}
+.hbg.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hbg.open span:nth-child(2){opacity:0;}
+.hbg.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.mob-nav{display:none;position:fixed;top:62px;left:0;right:0;z-index:199;background:#fff;border-bottom:.5px solid var(--g100);padding:12px 5% 18px;flex-direction:column;}
+.mob-nav.open{display:flex;}
+.mob-nav a{font-size:15px;color:var(--g600);text-decoration:none;padding:13px 0;border-bottom:.5px solid var(--g100);transition:color .2s;}
+.mob-nav a.mob-cta{margin-top:10px;background:var(--red);color:#fff;padding:13px 16px;border-radius:3px;text-align:center;font-weight:600;border-bottom:none;}
+.rr{height:3px;background:var(--red);margin-top:62px;}
+
+/* ── HERO ── */
+.cs-hero{padding:64px 8% 56px;border-bottom:.5px solid var(--g100);}
+.ey{display:flex;align-items:center;gap:10px;margin-bottom:22px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.13em;}
+.ey::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
+.crumb{font-size:12px;color:var(--g400);margin-bottom:26px;}
+.crumb a{color:var(--g400);text-decoration:none;border-bottom:1px solid var(--g200);padding-bottom:1px;transition:color .2s,border-color .2s;}
+.crumb a:hover{color:var(--navy);border-color:var(--navy);}
+h1{font-size:clamp(28px,3.4vw,46px);font-weight:800;color:var(--navy);line-height:1.08;letter-spacing:-.025em;margin-bottom:20px;max-width:900px;}
+h1 em{color:var(--red);font-style:normal;}
+.cs-standfirst{font-size:clamp(15px,1.4vw,17px);color:var(--g600);line-height:1.75;max-width:720px;}
+.cs-stats{display:flex;margin-top:44px;padding-top:30px;border-top:.5px solid var(--g100);flex-wrap:wrap;}
+.stat{flex:1;padding-right:20px;border-right:.5px solid var(--g100);}
+.stat:last-child{border-right:none;padding-right:0;}
+.stat:not(:first-child){padding-left:20px;}
+.stat-n{font-size:26px;font-weight:800;color:var(--navy);line-height:1;}
+.stat-l{font-size:10px;color:var(--g400);margin-top:5px;text-transform:uppercase;letter-spacing:.07em;line-height:1.4;}
+
+/* ── AT A GLANCE ── */
+.glance{background:var(--navy);padding:64px 8%;}
+.glance h2{color:#fff;}
+.glance-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:36px;}
+.gc{background:rgba(255,255,255,.04);border:.5px solid rgba(255,255,255,.08);border-left:2px solid var(--red);border-radius:4px;padding:24px 22px;transition:background .2s;}
+.gc:hover{background:rgba(255,255,255,.07);}
+.gc-l{font-size:10px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:11px;}
+.gc-b{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;}
+
+/* ── SECTIONS ── */
+section{padding:72px 8%;}
+h2{font-size:clamp(23px,2.6vw,34px);font-weight:800;color:var(--navy);line-height:1.15;letter-spacing:-.02em;margin-bottom:16px;}
+h3{font-size:clamp(17px,1.7vw,21px);font-weight:800;color:var(--navy);line-height:1.3;margin:44px 0 18px;}
+.prose{max-width:720px;}
+.prose p{font-size:15px;color:var(--g600);line-height:1.85;margin-bottom:18px;}
+.prose p:last-child{margin-bottom:0;}
+.prose p strong{color:var(--navy);font-weight:700;}
+.alt{background:var(--off);}
+
+/* ── USE CASE CARDS ── */
+.uc-group{margin-top:34px;}
+.uc-group-t{font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.11em;margin-bottom:18px;display:flex;align-items:center;gap:10px;}
+.uc-group-t::before{content:'';width:22px;height:2px;background:var(--red);flex-shrink:0;}
+.uc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:40px;}
+.uc{background:var(--w);border-radius:4px;padding:26px 24px;box-shadow:0 1px 3px rgba(13,30,76,.06);border-top:2px solid transparent;transition:border-color .2s,box-shadow .2s;}
+.uc:hover{border-color:var(--red);box-shadow:0 6px 24px rgba(13,30,76,.1);}
+.uc-t{font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:12px;}
+.uc-b{font-size:13.5px;color:var(--g600);line-height:1.75;}
+.uc-tag{display:inline-block;margin-top:14px;font-size:11px;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.07em;}
+
+/* ── RESULT TILES ── */
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px;margin-bottom:40px;}
+.ic{background:var(--w);border-radius:4px;padding:26px 22px;box-shadow:0 1px 3px rgba(13,30,76,.06);border-bottom:2px solid var(--g100);transition:border-color .2s;}
+.ic:hover{border-color:var(--red);}
+.ic-sec{font-size:10px;font-weight:700;color:var(--g400);text-transform:uppercase;letter-spacing:.1em;margin-bottom:14px;display:flex;align-items:center;gap:6px;}
+.ic-sec::before{content:'';width:9px;height:2px;background:var(--red);flex-shrink:0;}
+.ic-m{font-size:clamp(25px,2.4vw,34px);font-weight:800;color:var(--navy);line-height:1;margin-bottom:8px;}
+.ic-d{font-size:13px;color:var(--g600);line-height:1.7;}
+
+/* ── PULL QUOTE ── */
+.pq{background:var(--navy);padding:68px 8%;text-align:center;}
+.pq-m{font-size:64px;color:var(--red);font-family:Georgia,serif;line-height:.6;display:block;margin-bottom:20px;}
+.pq-t{font-size:clamp(19px,2.5vw,32px);font-weight:800;color:#fff;line-height:1.25;max-width:760px;margin:0 auto 18px;letter-spacing:-.01em;}
+.pq-a{font-size:12.5px;color:rgba(255,255,255,.33);}
+
+/* ── CTA ── */
+.cs-cta{background:var(--off);text-align:center;}
+.cs-cta h2{max-width:640px;margin:0 auto 16px;}
+.cs-cta .prose{margin:0 auto 30px;}
+.btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
+.btn-p:hover{background:var(--redh);transform:translateY(-1px);}
+.cs-note{max-width:720px;margin:44px auto 0;padding-top:22px;border-top:.5px solid var(--g100);font-size:12px;color:var(--g400);line-height:1.7;text-align:left;}
+
+/* ── FOOTER ── */
+footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
+.footer-logo-img{height:28px;width:auto;display:block;}
+.ft{font-size:8.5px;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.1em;text-transform:uppercase;}
+.flinks{display:flex;gap:22px;flex-wrap:wrap;}
+.flinks a{font-size:12px;color:rgba(255,255,255,.3);text-decoration:none;transition:color .2s;}
+.flinks a:hover{color:#fff;}
+.fcopy{font-size:11px;color:rgba(255,255,255,.18);}
+.footer-social{display:flex;gap:12px;align-items:center;}
+.fsoc{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:rgba(255,255,255,.35);border:.5px solid rgba(255,255,255,.1);transition:all .2s;text-decoration:none;}
+.fsoc:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){.res-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:900px){
+  .nav-links,.nav-cta{display:none;}
+  .hbg{display:flex;}
+  .glance-grid,.uc-grid{grid-template-columns:1fr;}
+  .cs-hero{padding:48px 6% 44px;}
+  .glance{padding:56px 6%;}
+}
+@media(max-width:600px){
+  section,.glance,.pq{padding:56px 5%;}
+  .cs-hero{padding:40px 5% 40px;}
+  .res-grid{grid-template-columns:1fr;}
+  .cs-stats{gap:20px;}
+  .stat{flex:1 0 40%;border-right:none!important;padding:0!important;}
+  .flinks{display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="../index.html" class="logo"><img src="../caizin-website-logo.svg" alt="Caizin" class="logo-img"/><div class="logo-t">raise the bar</div></a>
+  <ul class="nav-links">
+    <li><a href="../index.html#how-we-work">How We Work</a></li>
+    <li><a href="../index.html#our-work">Our Work</a></li>
+    <li><a href="../index.html#team">Our Team</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <a href="../index.html#contact" class="nav-cta">Start a Conversation</a>
+  <button class="hbg" id="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob-nav" id="mobnav">
+  <a href="../index.html#how-we-work" onclick="closeMenu()">How We Work</a>
+  <a href="../index.html#our-work" onclick="closeMenu()">Our Work</a>
+  <a href="../index.html#team" onclick="closeMenu()">Our Team</a>
+  <a href="../index.html#contact" onclick="closeMenu()" class="mob-cta">Start a Conversation</a>
+</div>
+<div class="rr"></div>
+
+<!-- HERO -->
+<div class="cs-hero">
+  <div class="crumb"><a href="../index.html#our-work">Our Work</a> &nbsp;/&nbsp; Case Study</div>
+  <div class="ey">A Caizin case study</div>
+  <h1>How Caizin Helped TQMI Put <em>AI to Work</em> in Its Consulting</h1>
+  <p class="cs-standfirst">TQMI's consulting deliverables are document-heavy and evidence-bound. Caizin put AI on the surfaces its consultants already use, applied it to live client work, and helped them build the habits that make the output safe to send.</p>
+  <div class="cs-stats">
+    <div class="stat"><div class="stat-n">10</div><div class="stat-l">Documented use cases</div></div>
+    <div class="stat"><div class="stat-n">4</div><div class="stat-l">Consultants</div></div>
+    <div class="stat"><div class="stat-n">25–75%</div><div class="stat-l">Time saved where measured</div></div>
+    <div class="stat"><div class="stat-n">3 days</div><div class="stat-l">A manual estimated at a month</div></div>
+  </div>
+</div>
+
+<!-- AT A GLANCE -->
+<section class="glance">
+  <div class="ey">At a glance</div>
+  <h2>The engagement in four lines.</h2>
+  <div class="glance-grid">
+    <div class="gc">
+      <div class="gc-l">Client</div>
+      <div class="gc-b">TQMI, a management consulting firm that helps industrial and manufacturing organizations improve quality, operational excellence, and business performance. TQMI's work runs from Deming Prize journeys and quality-circle programs to sales-process design and shop-floor problem solving.</div>
+    </div>
+    <div class="gc">
+      <div class="gc-l">Engagement</div>
+      <div class="gc-b">Caizin helped TQMI adopt AI across its consulting delivery. The goal was practical: get the tools into the hands of TQMI's consultants, on the actual work they do for clients, and build the habits that make the output safe to send.</div>
+    </div>
+    <div class="gc">
+      <div class="gc-l">What we enabled</div>
+      <div class="gc-b">Access to Claude, Anthropic's AI assistant, on three surfaces that match how consultants already work: a chat window for thinking and research, a workspace for building deliverables from source material, and AI inside MS Office for documents, slides, and spreadsheets. Alongside access, Caizin helped consultants choose the right tool for each job and keep a person in the loop on every client-facing output.</div>
+    </div>
+    <div class="gc">
+      <div class="gc-l">Early results</div>
+      <div class="gc-b">Ten documented use cases from four consultants, spanning sales analytics, workforce attrition analysis, operational exception detection, a client process manual, competitor benchmarking, Deming Prize deliverables, quality-circle presentations, post-program training support, and pre-visit assessment research. Where consultants measured it, the tools saved them roughly 25 to 75 percent of the time a task used to take, and the work was more rigorous, more consistent, and closer to client-ready.</div>
+    </div>
+  </div>
+</section>
+
+<!-- BACKGROUND -->
+<section>
+  <div class="ey">About Caizin</div>
+  <h2>Adoption was the whole engagement.</h2>
+  <div class="prose">
+    <p>Caizin is a strategy-led, execution-driven partner for growth-stage and mid-market companies. We stay embedded until the outcome is real rather than handing over a deck and leaving.</p>
+    <p>Helping teams adopt AI is now part of how we deliver. With TQMI, adoption was the whole engagement. The question was not whether an AI model could write a paragraph. It was whether a working consultant, on a live client deliverable with a deadline, could use these tools to do better work in less time without giving up control of quality. The way to answer that was to run it on real work and see what happened.</p>
+  </div>
+
+  <h3>The work TQMI does, and where the time goes</h3>
+  <div class="prose">
+    <p>TQMI's deliverables are document-heavy and evidence-bound. A single engagement can produce process manuals, benchmarking studies, root-cause analyses, executive readouts, and multi-year improvement roadmaps. Each one has to be accurate, has to fit the client's specific business, and has to hold up when a client's leadership pushes back on it.</p>
+    <p>That kind of work has a few predictable costs. Research and drafting take days or weeks before a consultant has something a client can react to. Structuring findings into a clear, client-ready format is slow, manual work that tends to fall on senior people. And the volume of detail in a large program, for example a Deming Prize roadmap with dozens of activities spread over several years, is hard for one person to hold and lay out consistently.</p>
+    <p>None of this is a quality problem for TQMI. Their consultants are experienced and their methods are rigorous. It is a throughput problem. The senior judgment that makes a deliverable good is scarce, and too much of it was being spent on assembly rather than on thinking.</p>
+  </div>
+
+  <h3>How Caizin approached it</h3>
+  <div class="prose">
+    <p>Caizin did not ask TQMI's consultants to change how they work. We put the tools on the surfaces they already use and helped them apply them to the deliverable in front of them.</p>
+    <p>The chat window became the place to research and pressure-test thinking before a client visit or a draft. The workspace became the place to turn source material, such as a training transcript or a set of sales records, into a finished artifact. AI inside MS Office became the place to produce the Word documents, decks, and spreadsheets that clients actually receive.</p>
+    <p>Two habits, which Caizin helped establish, made the output safe to send. The first was matching the tool and the model to the job. On the post-program tutor described below, a lighter, faster model gave wrong answers and a stronger one set to higher effort gave correct ones, so the team standardized on the setting that produced reliable results. The second habit was keeping a person in the loop on everything client-facing. In every use case, a consultant checked the output, corrected it, and made the final call on what the client saw. The tool did the drafting and the assembly. The consultant owned the judgment.</p>
+  </div>
+</section>
+
+<!-- USE CASES -->
+<section class="alt">
+  <div class="ey">What TQMI's consultants built</div>
+  <h2>Ten use cases, from four consultants.</h2>
+  <p class="prose" style="font-size:15px;color:var(--g600);line-height:1.85;">The clearest way to show the value is through the real work. Individual consultants are not named, and client identities are kept to a broad sector at most.</p>
+
+  <div class="uc-group">
+    <div class="uc-group-t">Turning operational data into decisions</div>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-t">A sales KPI dashboard with recommendations</div>
+        <div class="uc-b">A field sales team tracks about 17 KPIs per officer as part of its daily routine. For a branch head with ten field officers, that is around 170 KPIs to review in a single daily stand-up call, which is more than one person can work through well. A TQMI consultant built a dashboard that points to the specific gaps for each officer and suggests what to do about each KPI. The daily call became more focused, officers could see their own performance next to the branch's, and the client got recommendations it had never had before. The consultant validated the data and the recommendations over several trials before showing the client, and reported that the tool saved over 75 percent of the effort.</div>
+        <div class="uc-tag">Over 75% of the effort saved</div>
+      </div>
+      <div class="uc">
+        <div class="uc-t">A workforce attrition analysis</div>
+        <div class="uc-b">A manufacturing plant needed to understand why apprentices were leaving. Working from the raw workforce data, a consultant produced a client-ready presentation that broke 66 separations down by tenure, department, floor, role, and supervisor, established that all of them were early exits without formal notice, and turned the findings into a prioritized recommendations roadmap covering onboarding, mentoring, and root-cause follow-up. The analysis that used to sit in a spreadsheet became an executive-ready readout.</div>
+        <div class="uc-tag">Spreadsheet to executive readout</div>
+      </div>
+      <div class="uc">
+        <div class="uc-t">Exception detection on daily operations data</div>
+        <div class="uc-b">A heavy-industry manufacturer runs a large operation with hundreds of process units, each logging dozens of parameters every day. Finding the few units drifting out of range by scanning that report by hand is slow and easy to get wrong. A consultant used the tool to read the daily parameter report and flag the units and readings that fell outside normal ranges, so the team could put its attention on the exceptions rather than the whole sheet.</div>
+        <div class="uc-tag">Attention on the exceptions</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uc-group">
+    <div class="uc-group-t">Producing client documents and deliverables</div>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-t">A beat planning manual for a sales client</div>
+        <div class="uc-b">Beat planning, the routine that decides which market a sales officer covers on which day, needed a full manual for a client. Written by hand, with the market research it requires, a consultant estimated this at several weeks to a month. About 70 percent of the manual was drafted with AI in the workspace and MS Office, and the consultant spent the remaining effort proofreading and editing it to fit the client's business. The manual was finished in three days, and the time saved went into starting other process work earlier.</div>
+        <div class="uc-tag">A month of work, done in three days</div>
+      </div>
+      <div class="uc">
+        <div class="uc-t">Deliverables for a multi-year quality roadmap</div>
+        <div class="uc-b">A heavy-industry manufacturer working toward the Deming Prize asked for a defined deliverable for every activity in its roadmap, covering more than 28 activities across four years. A consultant wrote a detailed prompt with the full context and generated the deliverables for all the activities at once. He then checked every one for fit and risk, removing or rewording anything that seemed too constraining or superficial before it went to the client. The task had previously meant repeated discussions and step-by-step writing, and the tool reduced the effort by over 75 percent.</div>
+        <div class="uc-tag">28+ activities across four years</div>
+      </div>
+      <div class="uc">
+        <div class="uc-t">A competitor benchmarking study</div>
+        <div class="uc-b">For a market benchmarking study against two competitors, a consultant compiled the strengths of each company and turned them into a prioritized set of recommendations for the client, including an effort-versus-impact rating for each one. He reviewed and adjusted the recommendations and the ratings himself, and noted that the structure made the recommendations easier to prioritize and reduced rework.</div>
+        <div class="uc-tag">Easier to prioritize, less rework</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uc-group">
+    <div class="uc-group-t">Building structured improvement presentations</div>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-t">Quality-circle project presentations</div>
+        <div class="uc-b">TQMI's quality work follows a defined methodology, the PDCA and QC Story steps, from theme selection and current-state data through root-cause analysis, countermeasures, results, and standardization. A consultant used AI to assemble two full project presentations in this format: an 8-step quality-circle project on assembly-line rejection and a 10-step QC Story on welding defects, each with fishbone and why-why analysis, a countermeasure matrix, before-and-after results, and a standardization plan. The methodology and the numbers came from the project. The tool handled the structuring and layout that usually takes hours per deck.</div>
+        <div class="uc-tag">Hours per deck, on the structuring</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="uc-group">
+    <div class="uc-group-t">Supporting training and assessments</div>
+    <div class="uc-grid">
+      <div class="uc">
+        <div class="uc-t">A post-program tutor for training participants</div>
+        <div class="uc-b">People who attend a training program often miss a session or forget what a topic covered. A consultant took the transcript of a delivered program, instructed the tool to answer only from that transcript, and turned it into a support tutor that participants could ask about the training. This started as a test and pointed to a way to give participants help outside of one-off emails to the trainer. It is not yet public, and taking it to participants would need a front end and a hosted transcript, which is a clear next step rather than a finished product.</div>
+        <div class="uc-tag">A clear next step</div>
+      </div>
+      <div class="uc">
+        <div class="uc-t">Research to prepare a client assessment</div>
+        <div class="uc-b">Ahead of a first-time assessment for an automotive client, a consultant used the tool to check the typical issues in that kind of operation, along with common customer concerns and points of comparison with competitors. This was on top of the usual approaches of looking at weak KPIs, past experience, and client feedback. It helped confirm the hypotheses he had formed before the site visit and surfaced a few areas that might otherwise have been missed, which made the assessment more complete. He validated the findings with direct questions during the visit.</div>
+        <div class="uc-tag">A more complete assessment</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section>
+  <div class="ey">Results</div>
+  <h2>Stated in the terms the consultants<br/>used themselves.</h2>
+  <p class="prose" style="font-size:15px;color:var(--g600);line-height:1.85;">The pattern across the ten use cases is consistent, and it is worth stating in the terms the consultants used themselves rather than generalizing beyond what was observed.</p>
+  <div class="res-grid">
+    <div class="ic"><div class="ic-sec">Speed</div><div class="ic-m">25–75%</div><div class="ic-d">Time saved across the use cases where a consultant measured it, with the larger, more document-heavy tasks saving the most. The beat planning manual is the clearest example, moving from an estimated month to three days.</div></div>
+    <div class="ic"><div class="ic-sec">Quality</div><div class="ic-m">Client-ready</div><div class="ic-d">Consultants cited better rigour, more consistency, and outputs that were closer to client-ready. In one consultant's words, the sales work "gave the speed and clarity" and reached a stage that a typical change-management process would have taken months and significant cost to reach.</div></div>
+    <div class="ic"><div class="ic-sec">Control</div><div class="ic-m">Human in the loop</div><div class="ic-d">The judgment stayed with the consultant in every case. One ran several validation passes on the KPI data before presenting it. Another checked every roadmap deliverable for fit and risk and removed the ones that were too constraining.</div></div>
+  </div>
+  <div class="prose">
+    <p>Work that used to take weeks was finished in days. Another consultant summed up the assessment research as "focused, technical depth and relevant value to customer." On the tutor, model choice mattered, and the consultant settled on the setting that gave correct answers. The tool did the drafting and the assembly, and the consultant decided what was right for the client.</p>
+  </div>
+</section>
+
+<!-- WHY THIS WORKED -->
+<section class="alt">
+  <div class="ey">Why this worked</div>
+  <h2>It held up on live client deliverables.</h2>
+  <div class="prose">
+    <p>TQMI's consultants reached for AI on the parts of the work where careful reading, faithful synthesis, and clear writing matter most, and it held up on live client deliverables.</p>
+    <p>It works across the surfaces consultants already use. The same tool helped in a chat window for research, in a workspace for building an artifact from source material, and inside MS Office for the final document. Consultants did not have to leave their workflow to get value.</p>
+    <p>It produces client-grade drafts that a consultant can finish. In every use case, the output was close enough that the remaining work was review and tailoring rather than rewriting from scratch, which is where the time savings came from.</p>
+    <p>And it responds to how it is set up. On the tutor, matching the model and effort level to the task was the difference between wrong answers and reliable ones. That gave TQMI a repeatable way to get dependable output rather than a lucky result.</p>
+  </div>
+</section>
+
+<!-- PULL QUOTE -->
+<div class="pq">
+  <span class="pq-m">"</span>
+  <div class="pq-t">The tool did the drafting and the assembly. The consultant owned the judgment.</div>
+  <div class="pq-a">The habit that made the output safe to send</div>
+</div>
+
+<!-- WHAT THIS POINTS TO -->
+<section>
+  <div class="ey">What this points to</div>
+  <h2>The start of a broader shift in<br/>how the firm delivers.</h2>
+  <div class="prose">
+    <p>For TQMI, this is the start of a broader shift in how the firm delivers. The early use cases came from four consultants applying AI to their own work. The same approach, putting the tool on the real deliverable and keeping a person in the loop, extends to the rest of the practice, from quality-circle programs and attrition analysis to executive readouts and proposals.</p>
+    <p>For Caizin, TQMI is a clear example of what AI adoption looks like when it is done on real work rather than in a demo. The consultant stays in charge of judgment and the client relationship, and the tool takes on the research and assembly that used to cap how much a consultant could produce. That is the shift we help our clients make, and TQMI is now making it.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cs-cta">
+  <div class="ey" style="justify-content:center;">Caizin, Raise the Bar</div>
+  <h2>Want AI adopted on the work your<br/>team already does?</h2>
+  <div class="prose"><p>We put the tools on the deliverable in front of your team, help them pick the right one for each job, and keep a person in the loop on everything a client sees.</p></div>
+  <a href="../index.html#contact" class="btn-p">Start a Conversation →</a>
+  <p class="cs-note">Individual TQMI consultants are not named, and client identities are kept to a broad sector at most. Time savings and quality improvements are as reported by the consultants who ran each use case.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div><img src="../caizin-website-inverted-logo.svg" alt="Caizin" class="footer-logo-img"/><div class="ft">raise the bar</div></div>
+  <div class="flinks">
+    <a href="../index.html#how-we-work">How We Work</a>
+    <a href="../index.html#our-work">Our Work</a>
+    <a href="../index.html#team">Our Team</a>
+    <a href="../index.html#contact">Contact</a>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.linkedin.com/company/caizin/" target="_blank" rel="noopener" class="fsoc" aria-label="LinkedIn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    </a>
+    <a href="https://www.youtube.com/@caizincommune" target="_blank" rel="noopener" class="fsoc" aria-label="YouTube">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#060d20"/></svg>
+    </a>
+    <a href="https://www.instagram.com/caizin_raisethebar/" target="_blank" rel="noopener" class="fsoc" aria-label="Instagram">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+  </div>
+  <div class="fcopy">© 2026 Caizin. All rights reserved.</div>
+</footer>
+
+<script>
+function toggleMenu(){document.getElementById('hbg').classList.toggle('open');document.getElementById('mobnav').classList.toggle('open');}
+function closeMenu(){document.getElementById('hbg').classList.remove('open');document.getElementById('mobnav').classList.remove('open');}
+</script>
+</body>
+</html>
