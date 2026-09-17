@@ -4,7 +4,7 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>TQMI: AI in Consulting Delivery | Caizin Case Study</title>
-<meta name="description" content="A Caizin case study. TQMI's consultants applied Anthropic's Claude to live client deliverables across ten documented use cases, removing 25 to 75 percent of task time where it was measured."/>
+<meta name="description" content="A Caizin case study. TQMI's consultants applied Anthropic's Claude to live client deliverables across ten documented use cases, removing 25 to over 75 percent of task time where it was measured."/>
 <link rel="icon" type="image/x-icon" href="../favicon.ico"/>
 <style>
 :root{
@@ -131,6 +131,32 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 .fsoc{display:flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;color:rgba(255,255,255,.35);border:.5px solid rgba(255,255,255,.1);transition:all .2s;text-decoration:none;}
 .fsoc:hover{color:#fff;border-color:rgba(255,255,255,.4);background:rgba(255,255,255,.08);}
 
+/* ── PAGE WIDTH ──
+   The article body was a 740px text column sitting inside full-width
+   containers, so on a wide screen the text filled the left half and the
+   right half was empty. Everything in the article now sits in one 820px
+   column instead, and the boxes end where the text ends.
+   The max() keeps the original 8% side padding on screens under 1025px,
+   where the percentage is already narrower than the cap.
+   Nav and footer are deliberately left out so they stay full width and
+   match the rest of caizin.ai.
+   Card grids drop to one per row because a two or three across grid
+   inside 820px leaves each card too narrow to read comfortably. */
+:root{--maxw:820px;}
+.cs-hero,section,.glance,.pq{padding-left:max(8%,calc((100% - var(--maxw))/2));padding-right:max(8%,calc((100% - var(--maxw))/2));}
+.prose,.lead,.cs-standfirst{max-width:none;}
+.case p{max-width:none;}
+.res-grid{grid-template-columns:1fr;}
+.glance-grid{grid-template-columns:1fr;}
+
+/* ── TYPE SCALE ──
+   Body text goes up from 15px to 17px. Paired with the 820px column above,
+   this holds the line at about 107 characters, the same as the old 740px
+   column at 15px, so the type got bigger without the lines getting longer. */
+.cs-standfirst,.lead,.prose p{font-size:17px;}
+.case p,.gc-b{font-size:16px;}
+.ic-d,td{font-size:15px;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:1100px){.res-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:900px){
@@ -141,7 +167,12 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   .glance{padding:56px 6%;}
   .case{padding:26px 24px;}
 }
-@media(max-width:700px){
+/* Table switches to stacked cards below 900px, raised from 700px.
+   The table needs 720px minimum, and between 700px and 900px the page is
+   narrower than that, so the Effect column was cut off mid-word with no
+   visible scrollbar on macOS. The card layout below already existed and
+   covers that range now. */
+@media(max-width:900px){
   .tbl-wrap{overflow-x:visible;}
   table{min-width:0;display:block;box-shadow:none;background:none;}
   thead{display:none;}
@@ -189,11 +220,11 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="crumb"><a href="../index.html#our-work">Our Work</a> &nbsp;/&nbsp; Case Study</div>
   <div class="ey">Caizin case study &nbsp;·&nbsp; Management consulting</div>
   <h1>TQMI put <em>AI to work</em> inside its consulting delivery</h1>
-  <p class="cs-standfirst">TQMI's consultants produce document-heavy, evidence-bound deliverables for industrial and manufacturing clients. Caizin placed Anthropic's Claude on the three surfaces those consultants already work in and ran the rollout on live client deliverables. Ten use cases are documented so far, and on the tasks consultants measured, 25 to 75 percent of the time came out.</p>
+  <p class="cs-standfirst">TQMI's consultants produce document-heavy, evidence-bound deliverables for industrial and manufacturing clients. Caizin placed Anthropic's Claude on the three surfaces those consultants already work in and ran the rollout on live client deliverables. Ten use cases are documented so far, and on the tasks consultants measured, 25 to over 75 percent of the time came out.</p>
   <div class="cs-stats">
     <div class="stat"><div class="stat-n">10</div><div class="stat-l">Documented use cases</div></div>
     <div class="stat"><div class="stat-n">4</div><div class="stat-l">Consultants</div></div>
-    <div class="stat"><div class="stat-n">25–75%</div><div class="stat-l">Task time removed where measured</div></div>
+    <div class="stat"><div class="stat-n">25 to 75%+</div><div class="stat-l">Task time removed where measured</div></div>
     <div class="stat"><div class="stat-n">3 days</div><div class="stat-l">A client manual estimated at a month</div></div>
   </div>
 </div>
@@ -205,7 +236,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="glance-grid">
     <div class="gc">
       <div class="gc-l">Client</div>
-      <div class="gc-b">TQMI is a management consulting firm serving industrial and manufacturing organizations in quality, operational excellence, and business performance. Its engagements run from Deming Prize programmes and quality-circle rollouts to sales-process design and shop-floor problem solving.</div>
+      <div class="gc-b">TQMI is a management consulting firm serving industrial and manufacturing organizations in quality, operational excellence, and business performance. Its engagements run from Deming Prize programs and quality-circle rollouts to sales-process design and shop-floor problem solving.</div>
     </div>
     <div class="gc">
       <div class="gc-l">Engagement</div>
@@ -217,7 +248,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
     </div>
     <div class="gc">
       <div class="gc-l">Early results</div>
-      <div class="gc-b">Ten use cases across four consultants, covering sales analytics, workforce attrition, operational exception detection, a client process manual, competitor benchmarking, Deming Prize deliverables, quality-circle presentations, post-programme training support, and pre-visit assessment research. On the tasks that were measured, 25 to 75 percent of the time came out, and consultants reported more rigorous and more consistent output.</div>
+      <div class="gc-b">Ten use cases across four consultants, covering sales analytics, workforce attrition, operational exception detection, a client process manual, competitor benchmarking, Deming Prize deliverables, quality-circle presentations, post-program training support, and pre-visit assessment research. On the tasks that were measured, 25 to over 75 percent of the time came out, and consultants reported more rigorous and more consistent output.</div>
     </div>
   </div>
 </section>
@@ -225,16 +256,16 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 <!-- BACKGROUND -->
 <section>
   <div class="ey">Background</div>
-  <h2>An adoption programme, run on real client work.</h2>
+  <h2>An adoption program, run on real client work.</h2>
   <div class="prose">
     <p>Caizin is a strategy-led, execution-driven partner for growth-stage and mid-market companies, and it stays embedded through delivery rather than handing over a set of recommendations. AI adoption has become part of that delivery work. With TQMI it was the entire engagement.</p>
-    <p>The question on the table was not general AI capability. It was whether an experienced consultant, working on a deliverable a client was waiting for, could get more done without lowering the standard of what went out. That can only be answered on live engagements, so the programme ran on real client work from the start.</p>
+    <p>The question on the table was not general AI capability. It was whether an experienced consultant, working on a deliverable a client was waiting for, could get more done without lowering the standard of what went out. That can only be answered on live engagements, so the program ran on real client work from the start.</p>
   </div>
 
   <h3>Where the consulting time was going</h3>
   <div class="prose">
     <p>A single TQMI engagement can generate process manuals, benchmarking studies, root-cause analyses, executive readouts, and multi-year improvement roadmaps. Each one has to be accurate, specific to the client's business, and robust enough to hold up when the client's leadership pushes back on it.</p>
-    <p>Three costs follow from that. Research and drafting absorb days or weeks before a client has anything to react to. Turning findings into a clear, client-ready format is manual work that tends to land on senior people. And a large programme carries more detail than one person can lay out consistently: a Deming Prize roadmap, for instance, spans dozens of activities across several years.</p>
+    <p>Three costs follow from that. Research and drafting absorb days or weeks before a client has anything to react to. Turning findings into a clear, client-ready format is manual work that tends to land on senior people. And a large program carries more detail than one person can lay out consistently: a Deming Prize roadmap, for instance, spans dozens of activities across several years.</p>
     <p>This was a throughput constraint rather than a quality one. TQMI's consultants are experienced and its methods are rigorous. Senior judgment is the scarce input, and a significant share of it was going into assembling documents instead of the thinking that makes them worth reading.</p>
   </div>
 
@@ -242,7 +273,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="prose">
     <p>Caizin did not ask TQMI's consultants to change how they work. Claude was placed on the surfaces they already used, and each consultant applied it to the deliverable in front of them.</p>
     <p>The chat window took on research and pressure-testing ahead of a client visit or a draft. The workspace turned source material, such as a training transcript or a set of sales records, into a finished artifact. Claude inside MS Office produced the Word documents, decks, and spreadsheets that clients actually receive.</p>
-    <p>Two working rules kept the output fit to send. The first was matching the surface and the model to the job. On the post-programme tutor listed below, a lighter model returned wrong answers while a stronger model at a higher effort setting returned correct ones, and the team standardised on the setting that proved reliable. The second rule was consultant review of every client-facing output. In all ten use cases a consultant checked the work, corrected it, and decided what the client saw.</p>
+    <p>Two working rules kept the output fit to send. The first was matching the surface and the model to the job. On the post-program tutor listed below, a lighter model returned wrong answers while a stronger model at a higher effort setting returned correct ones, and the team standardized on the setting that proved reliable. The second rule was consultant review of every client-facing output. In all ten use cases a consultant checked the work, corrected it, and decided what the client saw.</p>
   </div>
 </section>
 
@@ -276,10 +307,10 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
     </div>
 
     <div class="case">
-      <div class="case-n">Case three &nbsp;·&nbsp; Deming Prize programme</div>
+      <div class="case-n">Case three &nbsp;·&nbsp; Deming Prize program</div>
       <div class="case-t">Deliverables defined for a four-year quality roadmap</div>
       <p>A heavy-industry manufacturer pursuing the Deming Prize needed a defined deliverable for every activity in its improvement roadmap, covering more than 28 activities across four years. The established method was repeated working sessions and step-by-step drafting.</p>
-      <p>The consultant wrote a single detailed prompt carrying the full programme context and generated deliverables for every activity at once. He then reviewed each one for fit and risk, removing or rewording anything that read as too constraining or too superficial before it reached the client.</p>
+      <p>The consultant wrote a single detailed prompt carrying the full program context and generated deliverables for every activity at once. The consultant then reviewed each one for fit and risk, removing or rewording anything that read as too constraining or too superficial before it reached the client.</p>
       <div class="case-metric">
         <div class="case-metric-n">Over 75%</div>
         <div class="case-metric-l">of the effort removed across 28-plus activities</div>
@@ -297,7 +328,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
         <tr>
           <td class="tn">Workforce attrition analysis</td>
           <td data-l="What was done">Raw plant workforce data turned into a client-ready presentation: 66 separations broken down by tenure, department, floor, role, and supervisor, all of them established as early exits without formal notice.</td>
-          <td data-l="Effect">A spreadsheet exercise became an executive readout with a prioritised roadmap for onboarding, mentoring, and root-cause follow-up.</td>
+          <td data-l="Effect">A spreadsheet exercise became an executive readout with a prioritized roadmap for onboarding, mentoring, and root-cause follow-up.</td>
         </tr>
         <tr>
           <td class="tn">Exception detection on daily operations data</td>
@@ -306,22 +337,22 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
         </tr>
         <tr>
           <td class="tn">Competitor benchmarking study</td>
-          <td data-l="What was done">The strengths of two competitors compiled and converted into a prioritised recommendation set, each item carrying an effort-versus-impact rating that the consultant reviewed and adjusted.</td>
-          <td data-l="Effect">Recommendations were easier for the client to prioritise, and the structure reduced rework.</td>
+          <td data-l="What was done">The strengths of two competitors compiled and converted into a prioritized recommendation set, each item carrying an effort-versus-impact rating that the consultant reviewed and adjusted.</td>
+          <td data-l="Effect">Recommendations were easier for the client to prioritize, and the structure reduced rework.</td>
         </tr>
         <tr>
           <td class="tn">Quality-circle project on assembly-line rejection</td>
-          <td data-l="What was done">An 8-step quality-circle presentation assembled in TQMI's PDCA format, with fishbone and why-why analysis, a countermeasure matrix, before-and-after results, and a standardisation plan.</td>
+          <td data-l="What was done">An 8-step quality-circle presentation assembled in TQMI's PDCA format, with fishbone and why-why analysis, a countermeasure matrix, before-and-after results, and a standardization plan.</td>
           <td data-l="Effect">Methodology and numbers came from the project. Claude handled the structuring and layout that usually takes hours per deck.</td>
         </tr>
         <tr>
           <td class="tn">QC Story on welding defects</td>
-          <td data-l="What was done">A 10-step QC Story presentation built to the same methodology, from theme selection and current-state data through countermeasures, results, and standardisation.</td>
+          <td data-l="What was done">A 10-step QC Story presentation built to the same methodology, from theme selection and current-state data through countermeasures, results, and standardization.</td>
           <td data-l="Effect">A second deck produced to the firm's standard format without the usual assembly time.</td>
         </tr>
         <tr>
-          <td class="tn">Post-programme training tutor</td>
-          <td data-l="What was done">The transcript of a delivered training programme turned into a tutor instructed to answer only from that transcript, so participants who missed a session could ask about the material.</td>
+          <td class="tn">Post-program training tutor</td>
+          <td data-l="What was done">The transcript of a delivered training program turned into a tutor instructed to answer only from that transcript, so participants who missed a session could ask about the material.</td>
           <td data-l="Effect">A working test rather than a product. Reaching participants would need a front end and a hosted transcript, which TQMI treats as a defined next step.</td>
         </tr>
         <tr>
@@ -340,8 +371,8 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <h2>What the consultants reported.</h2>
   <p class="lead">The figures below are as reported by the consultants who ran each use case, and the pattern across the ten is consistent.</p>
   <div class="res-grid">
-    <div class="ic"><div class="ic-sec">Speed</div><div class="ic-m">25–75%</div><div class="ic-d">Time removed on the tasks where consultants measured it, with the document-heavy work at the top of that range. The beat planning manual is the clearest case, moving from an estimated month to three days.</div></div>
-    <div class="ic"><div class="ic-sec">Quality</div><div class="ic-m">Closer to client-ready</div><div class="ic-d">Consultants reported greater rigour and more consistency, with drafts that needed tailoring rather than rewriting. One said the sales work "gave the speed and clarity" to reach a point that a conventional change-management programme would have taken months and material cost to reach.</div></div>
+    <div class="ic"><div class="ic-sec">Speed</div><div class="ic-m">25 to 75%+</div><div class="ic-d">Time removed on the tasks where consultants measured it, with the document-heavy work at the top of that range. The beat planning manual is the clearest case, moving from an estimated month to three days.</div></div>
+    <div class="ic"><div class="ic-sec">Quality</div><div class="ic-m">Closer to client-ready</div><div class="ic-d">Consultants reported greater rigor and more consistency, with drafts that needed tailoring rather than rewriting. One said the sales work "gave the speed and clarity" to reach a point that a conventional change-management program would have taken months and material cost to reach.</div></div>
     <div class="ic"><div class="ic-sec">Control</div><div class="ic-m">Consultant sign-off</div><div class="ic-d">Every client-facing output was reviewed by the consultant who owned it. Several validation passes preceded the KPI dashboard, and every roadmap deliverable was checked for fit and risk before the client saw it.</div></div>
   </div>
   <div class="prose">
@@ -363,7 +394,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
 <!-- CALLOUT -->
 <div class="pq">
   <div class="pq-rule"></div>
-  <div class="pq-t">Across ten use cases, 25 to 75 percent of the task time came out where it was measured, and a consultant reviewed every output before a client saw it.</div>
+  <div class="pq-t">Across ten use cases, 25 to over 75 percent of the task time came out where it was measured, and a consultant reviewed every output before a client saw it.</div>
   <div class="pq-a">As reported by the four TQMI consultants who ran the work</div>
 </div>
 
@@ -372,7 +403,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <div class="ey">What this points to</div>
   <h2>An early sample rather than<br/>the finished picture.</h2>
   <div class="prose">
-    <p>For TQMI, the ten use cases came from four consultants applying Claude to their own deliverables. The same method, putting the tool on real client work and keeping consultant review in place, applies across the rest of the practice: quality-circle programmes, attrition analysis, executive readouts, and proposals.</p>
+    <p>For TQMI, the ten use cases came from four consultants applying Claude to their own deliverables. The same method, putting the tool on real client work and keeping consultant review in place, applies across the rest of the practice: quality-circle programs, attrition analysis, executive readouts, and proposals.</p>
     <p>For Caizin, the engagement is a working example of AI adoption outside a demonstration. The consultant keeps the client relationship and the judgment calls. The research and assembly that used to cap how much any one consultant could produce move to the tool.</p>
   </div>
 </section>
