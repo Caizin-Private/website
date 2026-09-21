@@ -63,6 +63,9 @@ h1 em{color:var(--red);font-style:normal;}
 .gc:hover{background:rgba(255,255,255,.07);}
 .gc-l{font-size:10px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:11px;}
 .gc-b{font-size:14px;color:rgba(255,255,255,.7);line-height:1.7;}
+.gc-link{margin-top:14px;padding-top:12px;border-top:.5px solid rgba(255,255,255,.1);}
+.gc-link a{font-size:12.5px;color:rgba(255,255,255,.75);text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px;transition:color .2s,border-color .2s;}
+.gc-link a:hover{color:#fff;border-color:#fff;}
 
 /* ── SECTIONS ── */
 section{padding:72px 8%;}
@@ -117,7 +120,6 @@ th:nth-child(2),td:nth-child(2){width:40%;}
 .cs-cta .prose{margin:0 auto 30px;}
 .btn-p{display:inline-flex;align-items:center;gap:7px;background:var(--red);color:#fff;font-size:14px;font-weight:600;padding:13px 26px;border-radius:3px;text-decoration:none;letter-spacing:.02em;transition:background .2s,transform .15s;}
 .btn-p:hover{background:var(--redh);transform:translateY(-1px);}
-.cs-note{max-width:740px;margin:44px auto 0;padding-top:22px;border-top:.5px solid var(--g100);font-size:12px;color:var(--g400);line-height:1.7;text-align:left;}
 
 /* ── FOOTER ── */
 footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justify-content:space-between;border-top:.5px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:16px;}
@@ -237,6 +239,7 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
     <div class="gc">
       <div class="gc-l">Client</div>
       <div class="gc-b">TQMI is a management consulting firm serving industrial and manufacturing organizations in quality, operational excellence, and business performance. Its projects range from Deming Prize programs (a Japanese award for company-wide quality management) and frontline quality improvement teams to sales-process design and factory-floor problem solving.</div>
+      <div class="gc-link"><a href="https://www.tqmi.com/" target="_blank" rel="noopener">tqmi.com &#8599;</a></div>
     </div>
     <div class="gc">
       <div class="gc-l">Engagement</div>
@@ -414,7 +417,6 @@ footer{background:#060d20;padding:40px 8%;display:flex;align-items:center;justif
   <h2>Want AI adopted on the work<br/>your team already does?</h2>
   <div class="prose"><p>Caizin runs AI adoption on real client work, sets the rules for which tool fits which job, and makes one named person accountable for everything the client sees.</p></div>
   <a href="../index.html#contact" class="btn-p">Start a Conversation →</a>
-  <p class="cs-note">Individual TQMI consultants are not named, and client identities are kept to a broad sector at most. Time savings and quality improvements are as reported by the consultants who ran each use case.</p>
 </section>
 
 <!-- FOOTER -->
